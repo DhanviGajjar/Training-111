@@ -1,0 +1,74 @@
+<html>
+<head>
+    <style>
+        table{
+        width: 100px;
+        margin:auto;
+        }
+    th,td{
+       border: 1px solid black;
+    }
+    </style>
+    <center><h3>KM Custom HTML Form Example Using Applescript<br>(by JMIchaelTX)</h3></center></head>
+<body>
+<form>   
+    
+
+     <table border="5">
+<tr>
+<td>Name:<td><input type="Name" name="firstname"></td></td>
+</tr>
+<tr>
+<td>Email:<td><input type="email" name="email"></td></td>
+</tr>
+<tr><td>Password:<td><input type="password"><br></td></td>
+</tr>
+<tr><td>Approval Required:<td><input type="checkbox" value="Do you approved?" checked> Do you approved?</td></td>
+</tr>
+    <tr><td>Pick Your Favorite:
+     <td> <input type="radio" name="Pick Your Favorite" value="Choice A" checked> Choice A<br>
+   <input type="radio" name="Pick Your Favorite" value="Choice B" checked> Choice B<br>
+    <input type="radio" name="Pick Your Favorite" value="Choice c" checked> Choice c</td>
+   </td>
+</tr>
+
+        <tr><td>Popup menu:<td><Select popup menu="txt1">
+            <option value="Texas--TX">Texas--TX</option>
+            <option value="India--IND">India--IND</option>
+            <option value="Japan--Jap">Japan--Jap</option>
+
+        </Select>
+<tr>
+<td>List
+    <h5>Setup Options:</h5>
+    <ul type="dot">
+    <li> Number of rows to display</li>
+    <li>Allow multi-select</li>
+    </ul>
+    <td><Select ="txt1">
+            <option value="California--CA">California--CA</option>
+            <option value="Colorado--CO">Colorado--CO</option>
+            <option value="Dolorado--DO">Dolorado--DO</option>
+        <option value="Texas--TX">Texas--TX</option>
+        <option value="India--IND">India--IND</option>
+        <option value="Japan--Jap">Japan--Jap</option></Select>
+</td></tr>
+      
+<tr>
+    <td>Field Ignored by KM:<td><input type="Field Ignored by KM" name="filedset"></td></td>
+    </tr>
+    <tr><td>TextArea</td> 
+        <td><textarea rows="5" cols="30" name="textarea" placeholder="enter your text"></textarea></td>
+        </tr>
+    
+<tr>
+    <td width="30%" hight="5%">    <input type ="save" value="save"/></td>
+     <td width="30%">  <input type="cancel" value="cancel"/></td>
+    <td width="30%">  <input type="submit" value="submit"/></td>
+</tr>
+
+</table>
+
+</form>
+</body>
+</html>
