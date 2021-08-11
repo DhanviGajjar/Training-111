@@ -1,0 +1,28 @@
+<html>
+<head>
+<style>
+div { 
+position: absolute; 
+display: inline-block;
+border-bottom: 1px dotted black;
+}
+div span { 
+visibility: hidden;
+background-color: black;
+color: #fff; 
+text-align: center;
+border-radius: 6px;
+position: absolute; 
+z-index: 1; 
+}
+div:hover span {
+visibility: visible; 
+}
+</style>
+</head>
+<body>
+<div>Hover over me
+<span>Tooltip text</span> 
+</div>
+</body>
+</html>
