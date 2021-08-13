@@ -1,0 +1,24 @@
+<html>
+<head>
+<h1>16. Take 3 numbers and find smallest number using logical operator.</h1>
+</head>
+<body>
+<script type "text/javascript>
+/*
+16. Take 3 numbers and find smallest number using logical operator.
+*/
+var a = Number(prompt('Enter First Number:'));
+var b = Number(prompt('Enter Second Number:'));
+var c = Number(prompt('Enter Third Number:'));
+
+if(a<b && a<c){
+    result="Number " + a + " is Smallest";
+}else if(b<a && b<c){
+    result="Number " + b + " is Smallest";
+}else{
+    result="Number " + c + " is Smallest";
+}
+document.write("<h3> " + result + "</h3>");
+</script>
+</body>
+</html>

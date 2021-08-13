@@ -1,0 +1,39 @@
+<html>
+<head>
+<h1>22.	Make a simple calculator using switch case.</h1>
+</head>
+<body>
+<script>
+      var a = Number(prompt("Enter your number1"));
+      var b = Number(prompt("Enter your number2"));
+      var operator = prompt("Enter your Operation like + , - , * , /");
+
+      document.write("<h2> Number 1 : " + a + "</h2>");
+      document.write("<h2> Number 2 :" + b + "</h2>");
+      var result;
+
+      if (b != 0) {
+        switch (operator) {
+            case "+":
+            result = a + b;
+            break;
+            case "-":
+            result = a - b;
+            case "*":
+            result = a * b;
+            break;
+          case "/":
+            result = a / b;
+            break;
+
+          default:
+            result = "Enter Valid Operation";
+        }
+      } else {
+        result = "Enter valid Number";
+      }
+
+      document.write("<h1> Result is : " + result + "</h1>"); 
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+<head>
+<h1>15. Take 3 number and find greatest number using nested IF…ELSE statement .</h1>
+</head>
+<body>
+<script type "text/javascript>
+/*
+15. Take 3 number and find greatest number using nested IF…ELSE statement .
+*/
+var a = Number(prompt('Enter First Number:'));
+var b = Number(prompt('Enter Second Number:'));
+var c = Number(prompt('Enter Third Number:'));
+if(a>b)
+    {
+        if(a>c)
+        {
+            result="number " + a;
+        }
+        else{
+            result="number " + c;
+        }
+    }
+    else{
+        if(b>c){
+            result="number " + b;
+        }
+        else{
+            result="number " + c;
+         }
+    }
+
+    document.write("<h3> " + result + " is greater </h3>");
+</script>
+</body>
+</html>

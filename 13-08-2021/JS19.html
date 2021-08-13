@@ -1,0 +1,24 @@
+<html>
+<head>
+<h1>19.	Take a number from the user. Take starting number & ending number from the user. Generate multiplication table of that number.</h1>
+</head>
+
+<body>
+
+<script type "text/javascript>
+/*
+19.		Take a number from the user. Take starting number & ending number from the user. Generate multiplication table of that number.
+*/
+
+var num = Number(prompt('Enter number:'));
+var startingnum=Number(prompt('Enter start number:'));
+var endingnum=Number(prompt('Enter end number:'));
+
+for (let i = startingnum; i <= endingnum; i++) {
+        var result = num * i;
+        document.write("<h3>" + num + "*" + i + "=" + result + "</h3>");
+      }    
+    </script>
+</body>
+
+</html>

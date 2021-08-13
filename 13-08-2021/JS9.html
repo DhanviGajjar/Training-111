@@ -1,0 +1,22 @@
+<html>
+<head>
+<h1>9. Take a number and find factorial of that number.</h1>
+</head>
+<body>
+    <script type"text/javascript">
+    /*
+    9. Take a number and find factorial of that number.
+*/
+const num = Number(prompt('Enter Number:'));
+function fact(a) {
+        if(a == 1 || a== 0){
+            return 1;
+        }
+        else {
+            return a*fact(a-1);
+        }
+    }
+document.write(fact(num)); 
+</script>
+</body>
+</html>
