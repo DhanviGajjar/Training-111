@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Sign Up Page</title>
+<link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css" />
+<link href="http://fonts.googleapis.com/css?family=Coda:400,800" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+
+<style type="text/css">
+		
+		div{
+			
+			padding-left: 20%;
+			padding-right: 20%;
+		}
+		legend{
+			font-size: 25px;
+    		font-style: oblique;
+    		font-weight: 600;
+    		font-family: cursive;
+		}
+		b{
+			padding-left: 25%;
+    		font-size: 35px;
+   		    font-style: revert;
+		}
+		.btn{
+			width: 70px;
+    		height: 30px;
+    		margin-left: 35%;
+		}
+		#btn{
+			margin-left: 5%;
+		}
+	</style>
+
+</head>
+<body>
+<div id="menu-wrapper">
+	<div id="menu">
+		<ul>
+			<li class="current_page_item"><a href="home.html">Homepage</a></li>
+			<li><a href="aboutme.html">About</a></li>
+			<li><a href="contact.html">Contact</a></li>
+			<li><a href="myPage.html">Photos</a></li>			
+			<li><a href="signup.html">SignUp</a></li>
+		</ul>
+	</div>
+	<!-- end #menu --> 
+</div>
+<div id="header-wrapper">
+	<div id="header">
+		<div id="logo">
+			<h1 style="text-transform: none;margin-left: -40%;"><a href="#">Sign Up Page</a></h1>
+			
+		</div>
+	</div>
+</div>
+<div id="wrapper"> 
+	<!-- end #header -->
+	<div id="page-bgtop"></div>
+	<div id="page">
+		
+		<div>
+		
+	<fieldset>
+		<legend>Persnol Information</legend>
+		<form>
+	<table>
+		<tr>
+		<td>
+			<label>First Name:</label>
+			<input type="text" name="fname" placeholder="Enter Name" required="">
+		</td>
+		<td>
+			<label>Last Name:</label>
+			<input type="text" name="lname" placeholder="Enter Last Name" required=""><br>
+		</td>		
+		</tr>
+		<tr>
+			<td>
+				<label>Gender:</label>
+				Male<input type="radio" name="gender">
+				Female<input type="radio" name="gender">
+			</td>
+			<td>
+				<label>Date Of Birth:</label>
+				<input type="Date" name="dob" required=""><br>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label>Email:</label>
+				<input type="email" name="email" placeholder="Enter Email" required="">
+			</td>
+			<td>
+				<label>Mobile No:</label>
+				<input type="number" name="mob" placeholder="Enter MObile No" required=""><br>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label>Language Known:</label>
+				<input type="checkbox" name="lk1" value="hindi">Hindi
+				<input type="checkbox" name="lk2" value="english">English
+				<input type="checkbox" name="lk3" value="gujrati">Gujrati
+				<input type="checkbox" name="lk4" value="others">Others
+			</td>
+		</tr>
+	</table>
+	</form>	
+	</fieldset>
+	
+	<fieldset>
+		<legend>Education Details</legend>
+		<table>
+		<tr>
+		<td>
+			<label>HSC Institude Name:</label>
+			<input type="text" name="hsc" placeholder="Enter Institude Name" required="">
+		</td>
+		<td>
+			<label>HSC Percentage:</label>
+			<input type="number" name="ssc" placeholder="Enter %" required=""><br><br>
+		</td>		
+		</tr>
+		<tr>
+		<td>
+			<label>SSC Institude Name:</label>
+			<input type="text" name="hsc" placeholder="Enter Institude Name" required="">
+		</td>
+		<td>
+			<label>SSC Percentage:</label>
+			<input type="number" name="ssc" placeholder="Enter %" required=""><br><br>
+		</td>		
+		</tr>
+		<tr>
+		<td>
+			<label>College/Institude Name:</label>
+			<input type="text" name="clg" placeholder="Enter Institude Name" required="">
+		</td>
+		<td>
+			<label>Percentage/CGPA:</label>
+			<input type="number" name="cgpa" placeholder="Enter GPA" required=""><br><br>
+		</td>		
+		</tr>
+		</table>
+	</fieldset>
+	<fieldset>
+		<legend>Technical Skills</legend>
+		<table>
+			<tr>
+				<td>
+					<label>Programming Skills:</label>
+					<input type="checkbox" name="lk1" value="oop">Oops
+					<input type="checkbox" name="lk2" value="c">C
+					<input type="checkbox" name="lk3" value="cpp">C++
+					<input type="checkbox" name="lk4" value="java">Java
+					<input type="checkbox" name="lk5" value=".net">.Net
+					<input type="checkbox" name="lk6" value="python">Python
+					<input type="checkbox" name="lk7" value="other">others<br><br>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Web Designing:</label>
+					<input type="checkbox" name="lk1" value="html">Html
+					<input type="checkbox" name="lk2" value="css">Css
+					<input type="checkbox" name="lk3" value="js">Java-Script
+					<input type="checkbox" name="lk4" value="boot">BootScript
+					<input type="checkbox" name="lk4" value="jquery">Jquery
+					<input type="checkbox" name="lk4" value="other">others<br><br>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label>Database:</label>
+					<input type="checkbox" name="lk1" value="mysql">MySQL
+					<input type="checkbox" name="lk2" value="mongo">MongoDB
+					<input type="checkbox" name="lk3" value="cpp">PostgreSQL
+					<input type="checkbox" name="lk4" value="oracle">Oracle
+					<input type="checkbox" name="lk4" value="other">others<br><br>
+				</td>
+			</tr>
+		</table>
+	</fieldset>
+	<br>
+	<input type="submit" name="submit" value="Submit" class="btn">
+	<input type="reset" name="reset" value="Reset" class="btn" id="btn">
+	</div>
+
+	</div>
+	<div id="page-bgbtm"></div>
+	<!-- end #page --> 
+</div>
+<div id="footer">
+    <p>2021. Sitename.com. All rights reserved. modify by Dhanvi Gajjar</p>
+	</div>
+<!-- end #footer -->
+</body>
+</html>
