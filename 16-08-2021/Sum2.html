@@ -1,0 +1,27 @@
+<html>
+<body>
+<form name="frm">
+num1:<input type="text" name="n1"><br>
+num2:<input type="text" name="n2"><br>
+result:<input type="text" name="res"><br>
+<input type="button" value="SUM" onclick="add()">
+</form>
+<script>
+function add(){
+var num1,num2;
+if(frm.n1.value=="") {
+alert("enter num1:");
+frm.n1.focus();
+}else if(frm.n2.value=="") {
+alert("enter num2:");
+frm.n2.focus();
+}else {
+num1=parseInt(frm.n1.value);
+num2=parseInt(frm.n2.value);
+rs=num1+num2;
+frm.res.value=rs;
+}
+}
+</script>
+</body>
+</html>
