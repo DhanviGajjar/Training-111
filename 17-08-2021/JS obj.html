@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script type="text/javascript">
+var person = {
+name: "Akash " ,
+age: 30,
+gender:" Male ",
+
+};
+document.write(person.age+"<br>");
+document.write(person["age"]+ "<br>");
+
+for(var i in person) { 
+document.write(person[i] + "<br>"); 
+}
+
+person.country = "India";
+
+for(var i in person) { 
+document.write(person[i] + "<br>"); 
+}
+delete person.age;
+for(var i in person) { 
+document.write(person[i] + "<br>"); 
+}
+</script>
+</body>
+</html>
