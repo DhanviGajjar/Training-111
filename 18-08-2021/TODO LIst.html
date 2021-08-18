@@ -1,0 +1,34 @@
+<html>
+<head>
+<script>
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+  }
+
+</script>
+
+</head>
+<body>
+    <div id="myDIV">
+    <input type="text" id="myInput" placeholder="Title...">
+    <p><button onclick="newElement()" type="button">Click me!</button></p>
+    </div>
+<ul id="myUL">
+  <li>Hit the gym</li>
+  <li>Pay bills</li>
+  <li>Read js</li>
+  <li>Buy fruits</li>
+  <li>Read a book</li>
+  <li>Organize room</li>
+</ul>
+</body>
+</html>
