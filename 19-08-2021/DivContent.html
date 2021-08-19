@@ -1,0 +1,48 @@
+<html>
+<body>
+<div>
+        <h1>Content 1</h1>
+        <p id="p1">This is content1.</p><br><br>
+        <h1>Content 2</h1>
+        <h2 id="p2">This is content2.</h2><br><br>
+        <h1>Content 3</h1>
+        <p id="p3">This is content3.</p><br><br>
+    </div>
+
+<script>
+        let p1 = document.getElementById("p1");
+        let p2 = document.getElementById("p2");
+        let p3 = document.getElementById("p3");
+        p1.addEventListener("mouseout", function() {
+            
+            p1.style.color = 'blue';
+            p1.style.backgroundColor = "black";
+            p1.style.width = "300px";
+            
+        });
+        p1.addEventListener("mouseover", function() {
+            p1.style = "none"
+        });
+
+        p2.addEventListener("mouseover", function() {
+            p2.style.color = 'black';
+            p2.style.backgroundColor = "pink";
+            para2.style.width = "400px";
+            
+        });
+        p2.addEventListener("mouseout", function() {
+            p2.style = "none"
+        });
+        p3.addEventListener("mouseover", function() {
+            p3.style.color = 'yellow';
+            p3.style.fontSize = "large";
+            p3.style.backgroundColor = "red";
+            p3.style.width = "400px";
+            
+        });
+        p3.addEventListener("mouseout", function() {
+            p3.style = "none"
+        });
+</script>
+</body>
+</html>

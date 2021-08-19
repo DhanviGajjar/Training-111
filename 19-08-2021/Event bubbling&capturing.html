@@ -1,0 +1,24 @@
+<html>
+<body>
+<div id="wrap">DIV<br>
+    <p class="hint">P<br>
+        <br>
+        <a class=a">A</a>
+        <br>
+    </p>
+</div>
+
+<script>
+    function showAlert(event) {
+        alert("You clicked: "+ this.tagName);
+        event.stopPropagation();
+    }
+
+    var elems = document.querySelectorAll("div, p, a");
+    for(let elem of elems) {
+        elem.addEventListener("click", showAlert);
+    }
+</script>
+</body>
+
+</html>

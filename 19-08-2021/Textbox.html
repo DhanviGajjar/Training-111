@@ -1,0 +1,55 @@
+<html>
+<head>
+<script>
+function myFunction() {
+frm.tid.style.backgroundColor="blue";
+frm.tid.style.width="300px";
+}
+function big(x)
+{
+frm.tid2.style.backgroundColor="red";
+frm.tid2.style.fontSize="50px";
+}
+function upp()
+{
+frm.tid0.value=frm.tid0.value.toUpperCase();
+}
+function down()
+{
+frm.tid8.style.backgroundColor="orange";
+fem.tid8.style.fontSize="50px";
+}
+function myFunction1()
+{
+frm.tid5.style.backgroundColor="blue";
+frm.tid5.style.width="300px";
+}
+function myFunction3()
+{
+frm.tid4.style.backgroundColor="pink";
+frm.tid4.style.width="300px";
+
+}
+function myFunction4()
+{
+frm.tid6.style.backgroundColor="blue";
+frm.tid6.style.width="300px";
+
+}
+</script>
+</head>
+<body>
+<form name="frm">
+ First name:<br> <input type="text" name="tid" onfocus="myFunction()"><br>
+ Middle name:<br><input type="text" name="tid7" onmousedown="alert('You have pressed a key inside text input!')"><br>
+ last Name:<br><input type="text" name="tid0" onkeyup="upp()"><br>
+ Father Name:<br><input type="text" name="tid8" onkeydown="down()"><br>
+ Mother Name:<br><input type="text" name="tid1" onmouseup="small()"><br>
+ password:<br><input type="text" name="tid2" onfocus="big()"><br>
+ Retype password:<br><input type="text" name="tid4" onmousedown="myFunction3"><br>
+ Email:<br><input type="text" name="tid5" onfocus="myFunction1()"><br>
+ Retype Emial:<br><input type="text" name="tid6" onfocus="myFunction4()"><br>
+ BirthDate:<br><input type="text" name="tid1" onmouseout="alert('You have moved out of the button!')"><br>
+</form>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<html>
+<head>
+    <style>
+           .box {
+            padding: 10%;
+            background-color:darkgoldenrod;
+            width: 400px;
+            height: 150px;
+        }
+        
+        buttons {
+            padding: 5%;
+            height: 10%;
+            width: 20%;
+            text-align: center;
+            border-color:darkmagenta;
+        }
+        
+        #red {
+            background-color: red;
+        }
+        
+        #blue {
+            background-color: blue;
+        }
+        #green {
+            background-color: green;
+        }
+        #yellow {
+            background-color: yellow;
+        }
+        
+        #reset {
+            background-color:darksalmon;
+        }
+    </style>
+
+
+    </style>
+    <body>
+        <div class="box">
+            <h3 id="color">A mountain can be defined as a landform that is 'higher and steeper than a hill' as per the dictionary. It stands high above the sea level, which is our surroundings. A mountain commonly has a steep slope and a sharp peak unlike hills that have gradual incline and more rounded peaks.
+            </h3>
+        </div><br>
+        <div class="buttons">
+            <button id="red">Red</button>
+            <button id="blue">Blue</button>
+            <button id="green">Green</button>
+            <button id="yellow">Yellow</button>
+            <button id="reset">Reset</button>
+        </div>
+        <script>
+            let cp = document.getElementById("color");
+            red.addEventListener("click", function() {
+                cp.style.color = "red";
+            });
+            blue.addEventListener("click", function() {
+                cp.style.color = "blue";
+            });
+            green.addEventListener("click", function() {
+                cp.style.color = "green";
+            });
+            yellow.addEventListener("click", function() {
+                cp.style.color = "yellow";
+            });
+            reset.addEventListener("click", function() {
+                cp.style.color = "black";
+            });
+        </script>
+
+
+    </body>
