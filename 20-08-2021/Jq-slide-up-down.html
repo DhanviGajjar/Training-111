@@ -1,0 +1,23 @@
+<html>
+<head>
+<script src="jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+// Slide up displayed paragraphs
+$(".btn-up").click(function(){
+$("p").slideUp();
+});
+// Slide down hidden paragraphs
+$(".btn-down").click(function(){
+$("p").slideDown();
+});
+});
+</script>
+</head>
+<body>
+<button type="button" class="btn-up">Slide Up</button> 
+<button type="button" class="btn-down">Slide Down</button>
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+</body>
+</html>

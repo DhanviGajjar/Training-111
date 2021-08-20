@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+// Fadeing out displayed paragraphs
+$(".btn-fadeout").click(function(){
+$("p").fadeOut();
+});
+// Fading in hidden paragraphs
+$(".btn-fadein").click(function(){
+$("p").fadeIn();
+});
+});
+</script>
+</head>
+<body>
+<button type="button" class="btn-fadeout">Fade Out</button>
+<button type="button" class="btn-fadein">Fade In</button>
+<p>This is a paragraph.</p>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+<head>
+<script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+i=0;
+$(document).ready(function(){
+                            //1.click 
+                              $("p").click(function(){
+                              $(this).slideUp();
+                                                      });
+                            //2.double click
+                              $("h4").dblclick(function(){
+                              $(this).slideUp();
+                                                           });
+                            //3. mouse hover                              
+                            $("h3").hover(function(){
+                            $(this).css("background-color", "blue");
+                                                     }, function(){
+                            $(this).css("background-color", "pink");
+                                                    });
+                            //4.mouse enter                      
+                            $("h5").mouseenter(function() { 
+                            $("h5").css("background-color", "yellow"); 
+                                                          });
+                             //5..mouse leave                      
+                            $("h2").mouseleave(function() { 
+                            $("h2").css("background-color", "orange"); 
+                                                          });                             
+                            //6.keypress 
+                            $("input").keypress(function() {
+                            $("span").text(i += 1);
+                                                           });
+                            
+});
+
+</script>
+</head>
+<body>
+<p style="background-color : red;">Click here!! It will disappear.</p>
+<h4 style="background-color : green;">Double Click here!! It will disappear.</h4>
+<h3 >Hover mouse here!!</h3>
+<h5>Mouse enter here!!</h5>
+<h2>Mouse leave here!!</h2>
+Enter your name: <input type="text">
+<h6>Keypresses: <span>0</span></h6>
+
+</body> 
+</html>
