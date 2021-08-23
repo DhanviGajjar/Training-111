@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="chosen.min.css"/>
+        <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+        <script type="text/javascript" src="chosen.jquery.min.js"></script>
+
+        <script type="text/javascript">
+        $(document).ready(function(){
+            
+            $(".names").chosen({
+                width:"50%"
+                     });
+        });
+
+        </script>
+    </head>
+<body>
+    <select class="names">
+        <option value="Uname">Uname</option>
+        <option value="Fname">First name</option>
+        <option value="Mname">Middle name</option>
+        <option value="Lame">Last name</option>
+        <option value="password">Password</option>
+        <option value="E-mail">E-mail</option>
+    </select>
+   <br/>
+   <br/>
+
+    <select class="names" multiple data-placeholder="select name from list">
+        <option value="Uname">Uname</option>
+        <option value="Fname">First name</option>
+        <option value="Mname">Middle name</option>
+        <option value="Lame">Last name</option>
+        <option value="password">Password</option>
+        <option value="E-mail">E-mail</option>
+    </select>
+</body>
+</html>

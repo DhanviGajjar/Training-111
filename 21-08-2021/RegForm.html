@@ -1,8 +1,7 @@
 <html>
 <head>
     <style>
-       /* Styles */
-* {
+       * {
   margin: 0;
   padding: 0;
 }
@@ -77,6 +76,12 @@ $(document).ready(function(){
             minlength: 5,
             equalTo: "#password"
         },
+        age: {
+        required: true,
+
+        min: 18,
+        max: 70,
+      },
         email: {
             required: true,
             email: true
@@ -99,6 +104,11 @@ $(document).ready(function(){
 				minlength: "Your password must be at least 5 characters long",
 				equalTo: "Please enter the same password as above"
 			},
+      age: {
+        required: "Please provide your age",
+        min: "you are under age for registration",
+        max: "you are over age for registration",
+      },
 			email: "Please enter a valid email address",
 			
 		}
