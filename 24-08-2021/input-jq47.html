@@ -1,0 +1,22 @@
+<html>
+<head>
+  <title>jQuery :input Selector</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $(":input").css('background-color', 'yellow');
+    });
+  </script>
+</head>
+<body>
+  <h1>Form Elements Selector</h1>
+  <form action="">
+    Name: <input type="text" name="name" /><br />
+    Password: <input type="password" name="password"/><br/>
+
+    <input type="button" value="Button">
+    <input type="reset" value="Reset">
+    <input type="submit" name="submit"/>
+  </form>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+<head>
+  <title>jQuery :animated selector</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <script>
+    function divAnimate() {
+      $("#divanim").slideToggle("slow", divAnimate);
+    }
+    $(document).ready(function() {
+      divAnimate();
+
+      $("button").click(function() {
+        $("div:animated").toggleClass("color");
+      });
+    });
+  </script>
+  <style>
+    div {
+      background:red;
+      margin: 15px;
+      width: 50px;
+      height: 100px;
+      float: left;}
+    div.color {
+      background: black;}
+  </style>
+</head>
+<body>
+  <div></div>
+  <div id="divanim"></div>
+  <div></div><br />
+  <button>Change</button>
+</body>
+</html>

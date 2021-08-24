@@ -1,0 +1,16 @@
+<html>
+<head>
+  <title>jQuery :has() Selector</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("p:has('span')").css('color', 'red');
+    });
+  </script>
+</head>
+<body>
+    <p>first paragraph contents</p>
+    <p><span>second paragraph contents</span></p>
+    <p>third contents</p>
+</body>
+</html>

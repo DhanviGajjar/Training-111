@@ -1,0 +1,22 @@
+<html>
+<head>
+  <title>jQuery :hidden Selector</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("p:hidden").slideDown(5000);
+    });
+  </script>
+  <style>
+    .param {
+      display: none;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <p>first paragraph</p>
+  <p class="param">second paragraph</p>
+  <p>third paragraph</p>
+</body>
+</html>

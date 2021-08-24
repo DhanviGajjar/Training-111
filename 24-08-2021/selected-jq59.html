@@ -1,0 +1,32 @@
+<html>
+<head>
+  <title>jQuery :file Selector</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $(":selected").css('background-color', 'yellow');
+    });
+  </script>
+</head>
+<body>
+  <h1>Form Elements Selector-selected</h1>
+  <form action="">
+    Name: <input type="text" name="name" /><br />
+    Password: <input type="password" name="password"/><br/>
+    <select name="country">
+        <option value="india">India</option>
+        <option value="singapore" selected="selected">Singapore</option>
+        <option value="england">England</option>
+        <option value="france">France</option>
+     </select>
+     <br />
+     <br/>
+
+     
+    
+    <input type="button" value="Button" >
+    <input type="reset" value="Reset">
+    <input type="submit" name="submit"/>
+  </form>
+</body>
+</html>

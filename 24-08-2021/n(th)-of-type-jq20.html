@@ -1,0 +1,29 @@
+<html>
+<head>
+  <title>jQuery :nth-child(n) Selector</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("p:nth-of-type(2)").css('color', 'red');
+    });
+  </script>
+</head>
+<body>
+  <h1>nth-of-type</h1>
+  <p>second paragraph contents.</p>
+  <p>third paragraph contents.</p>
+
+  <section style="border:1px solid #000;">
+    <p>first paragraph contents...</p>
+    <p>second paragraph contents..</p>
+    <p>third paragraph contents...</p>
+  </section>
+  <br />
+
+  <div style="border:1px solid #000;">
+    <h3>Footer Ending</h3>
+    <p>first paragraph contents...</p>
+    <p>second paragraph contents..</p>
+  </div>
+</body>
+</html>

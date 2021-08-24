@@ -1,0 +1,23 @@
+<html>
+<head>
+  <title>jQuery :enabled Selector</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $(":enabled").css('background-color', 'yellow');
+    });
+  </script>
+</head>
+<body>
+  <h1>Form Elements Selector-enabled</h1>
+  <form action="">
+    Name: <input type="text" name="name" /><br />
+    Password: <input type="password" name="password"/><br/>
+
+    
+    <input type="button" value="Button" disabled="disabled">
+    <input type="reset" value="Reset">
+    <input type="submit" name="submit"/>
+  </form>
+</body>
+</html>

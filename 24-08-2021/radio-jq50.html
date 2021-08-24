@@ -1,0 +1,27 @@
+<html>
+<head>
+  <title>jQuery :radio Selector</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $(":radio").wrap( "<span></span>" ).parent().css("background-color", "yellow");
+    });
+  </script>
+</head>
+<body>
+  <h1>Form Elements Selector</h1>
+  <form action="">
+    Name: <input type="text" name="name" /><br />
+    Password: <input type="password" name="password"/><br/>
+
+    <div>
+      <input type="radio" name="gender" value="male" checked> Male<br />
+      <input type="radio" name="gender" value="female"> Female<br />
+    </div>
+
+    <input type="button" value="Button">
+    <input type="reset" value="Reset">
+    <input type="submit" name="submit"/>
+  </form>
+</body>
+</html>

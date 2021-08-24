@@ -1,0 +1,28 @@
+<html>
+<head>
+  <title>jQuery :parent Selector</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("td:parent").css('background-color', 'red');
+    });
+  </script>
+</head>
+<body>
+  <h1>Article heading</h1>
+
+  <table border="1" width="300px;">
+    <tr>
+      <td>A</td>
+      <td>B</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Z</td>
+      <td></td>
+      <td>Y</td>
+    </tr>
+  </table>
+
+</body>
+</html>

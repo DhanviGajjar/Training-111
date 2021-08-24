@@ -1,0 +1,26 @@
+<html>
+<head>
+  <title>jQuery :only-child Selector</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("p:only-child").css('color', 'red');
+    });
+  </script>
+</head>
+<body>
+  <h1>only-child</h1>
+
+  <section style="border:1px solid #000;">
+    <p>first paragraph contents...</p>
+  </section>
+  <br />
+
+  <h3>only child</h3>
+  <div style="border:1px solid #000;">
+    <p>first paragraph contents...</p>
+    <p>second paragraph contents..</p>
+    <p>third paragraph contents..</p>
+  </div>
+</body>
+</html>

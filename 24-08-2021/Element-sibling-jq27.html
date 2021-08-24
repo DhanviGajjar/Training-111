@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title>jQuery element ~ siblings Selector</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("div ~ p").css('color', 'red');
+    });
+  </script>
+</head>
+<body>
+  <h1>element ~ siblings</h1>
+  <p>first paragraph</p>
+  <br />
+
+  <div style="border:1px solid #000;">
+    <p>this element is a direct child of div element</p>
+  </div>
+  <p>This element is preceded by sibling of div element</p>
+  <p>This element is preceded by any sibling of div element</p>
+  <br />
+
+  <section style="border:1px solid #000;">
+    <p>first paragraph contents</p>
+  </section>
+
+  <h3>Footer Ending</h3>
+  <p>This element is preceded by any sibling of div element</p>
+
+</body>
+</html>

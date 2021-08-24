@@ -1,0 +1,18 @@
+<html>
+<head>
+  <title>jQuery [attribute$=value] Selector</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("p[class$='ram']").css('color', 'red');
+    });
+  </script>
+</head>
+<body>
+  <h1>Article heading</h1>
+  <p>first paragraph</p>
+  <p class="waram">second paragraph</p>
+  <p class="param">third paragraph</p>
+  <p class="braam">fourth paragraph</p>
+</body>
+</html>

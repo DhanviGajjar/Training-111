@@ -1,0 +1,27 @@
+<html>
+<head>
+  <title>jQuery :lasst-of-type Selector</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("p:last-of-type").css('color', 'red');
+    });
+  </script>
+</head>
+<body>
+    <section style="border:1px solid #000;">
+        <p>first paragraph contents...</p>
+        <p>second paragraph contents..</p>
+        <p>third paragraph contents..</p>
+      </section>
+      <br />
+    
+      <div style="border:1px solid #000;">
+        
+        <p>first paragraph contents...</p>
+        <p>second paragraph contents..</p>
+        <p>third paragraph contents..</p>
+        <h3>last-of-type</h3>
+      </div>
+</body>
+</html>

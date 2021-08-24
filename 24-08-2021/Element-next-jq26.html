@@ -1,0 +1,21 @@
+<html>
+<head>
+  <title>jQuery element + next Selector</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("div + p").css('color', 'red');
+    });
+  </script>
+</head>
+<body>
+  <h1>element + next</h1>
+  <br />
+
+  <div style="border:1px solid #000;">
+    <p>this element is a direct child of div element</p>
+  </div>
+  <p>This element is immediately preceded by a sibling of div element</p>
+
+</body>
+</html>

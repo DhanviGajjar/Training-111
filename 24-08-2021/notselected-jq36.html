@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery :not(selector) Selector</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("input:not(:checked) + label").css('color', 'red');
+    });
+  </script>
+</head>
+<body>
+  <div style="border:1px solid #000;">
+      <input type="checkbox" name="ra"> <label>Radio</label> <br />
+      <input type="checkbox" name="tv" checked="checked"> <label>TV</label> <br />
+      <input type="checkbox" name="cp"> <label>Cell Phone</label> <br />
+    </div>
+  
+  <br />
+
+</body>
+</html>

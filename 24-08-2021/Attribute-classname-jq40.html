@@ -1,0 +1,17 @@
+<html>
+<head>
+  <title>jQuery attribute Selector</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("p[class='abc']").css('color', 'red');
+    });
+  </script>
+</head>
+<body>
+  <p>first paragraph</p>
+  <p class="abc">second paragraph</p>
+  <p class="abc">third paragraph</p>
+  <p>fourth paragraph</p>
+</body>
+</html>

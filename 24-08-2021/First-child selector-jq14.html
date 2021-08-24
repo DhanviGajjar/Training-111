@@ -1,0 +1,26 @@
+<html>
+<head>
+  <title>jQuery :first-child Selector</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("p:first-child").css('color', 'red');
+    });
+  </script>
+</head>
+<body>
+    <section style="border:1px solid #000;">
+        <p>first paragraph contents...</p>
+        <p>second paragraph contents..</p>
+        <p>third paragraph contents..</p>
+      </section>
+      <br />
+    
+      <div style="border:1px solid #000;">
+        <h3>first-child</h3>
+        <p>first paragraph contents...</p>
+        <p>second paragraph contents..</p>
+        <p>third paragraph contents..</p>
+      </div>
+</body>
+</html>

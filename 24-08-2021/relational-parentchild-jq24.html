@@ -1,0 +1,28 @@
+<html>
+<head>
+  <title>jQuery relational Selector</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $("div p").css('color', 'red');
+    });
+  </script>
+</head>
+<body>
+  <h1>parent child</h1>
+  <p>first paragraph contents</p>
+  <p>second paragraph contents</p>
+  <br />
+
+  <div style="border:1px solid #000;">
+    <p>first paragraph contents</p>
+    <p>second paragraph contents</p>
+  </div>
+  <br />
+
+  <section style="border:1px solid #000;">
+    <h3>Footer Ending</h3>
+    <p>first paragraph contents</p>
+  </section>
+</body>
+</html>

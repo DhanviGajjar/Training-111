@@ -1,0 +1,28 @@
+<html>
+<head>
+  <title>jQuery :checkbox Selector</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $(":button").css("background-color", "yellow");
+    });
+  </script>
+</head>
+<body>
+  <h1>Form Elements Selector</h1>
+  <form action="">
+    Name: <input type="text" name="name" /><br />
+    Password: <input type="password" name="password"/><br/>
+
+    <div>
+      Favorite outdoor game:
+      <input type="checkbox" > Cricket
+      <input type="checkbox" checked="checked"> Football
+    </div>
+
+    <input type="button" value="Button">
+    <input type="reset" value="Reset">
+    <input type="submit" name="submit"/>
+  </form>
+</body>
+</html>
