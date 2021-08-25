@@ -1,0 +1,38 @@
+<html>
+<head></head>
+<body>
+    <script type="text/javascript">
+    var num =0;
+    class Calculator {
+        
+            constructor(n) {
+               num=n;
+            }
+            add = function(n1) {
+                num = num + n1;
+                return this;
+            }
+            subtract = function(n2) {
+                num = num - n2;
+                return this;
+            }
+            multiply = function(n3) {
+                num = num * n3;
+                return this;
+            }
+            divide = function(n4) {
+                num = num / n4;
+                return this;
+            }
+            toString() {
+                return num;
+            }
+        }
+    
+        var obj = new Calculator(10).add(5).multiply(2).divide(3).subtract(2);
+        alert(obj);
+
+    </script>
+</body>
+
+</html>

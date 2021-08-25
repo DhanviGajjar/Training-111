@@ -1,0 +1,190 @@
+<html>
+<head>
+    <style>
+          * {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans";
+  font-size: 14px;
+}
+
+.container {
+  width: 500px;
+  margin: 25px auto;
+}
+
+form {
+  padding: 20px;
+  background: #2c3e50;
+  color: #fff;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+form label,
+form input,
+form button {
+  border: 0;
+  margin-bottom: 3px;
+  display: block;
+  width: 100%;
+}
+form input {
+  height: 25px;
+  line-height: 25px;
+  background: #fff;
+  color: #000;
+  padding: 0 6px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+form button {
+  height: 30px;
+  line-height: 30px;
+  background: #e67e22;
+  color: #fff;
+  margin-top: 10px;
+  cursor: pointer;
+}
+form .error {
+  color: #ff0000;
+}
+      
+      </style>
+
+
+<script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="jquery.validate.js"></script>
+<link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">  
+      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>  
+      <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>  
+      
+      
+<script type="text/javascript">
+
+$(document).ready(function(){
+    $("#signupForm").validate({
+    rules: {
+                   firstname:{
+                        required: true,
+                        minlength: 3,
+                        maxlength:10
+                             },
+                   
+                  Mobile : {
+                         required: true,
+                         digits: true,
+                         minlength: 10,
+                         maxlength: 10
+                            },
+
+                 email: {
+                         required: true,
+                         email: true
+                        },
+
+                 Address:{
+                          required:true
+                         },
+
+                Date: {
+                         required:true
+                        },
+            
+       
+    }
+        messages: {
+			firstname: {
+				required: "Please enter a username",
+				minlength: "Your username must consist of at least 3 characters",
+                maxlength:"Your username must consist of at most 10 characters"
+			},
+
+            Contact : {
+                required: "Please provide a contact Number",
+                minlength: "Your Contact Nummber must be 10 digits long",
+                maxlength: "Your Contact Nummber must be 10 digits long",
+                      },
+			
+			 email:  {
+                  required:"Please enter a valid email address"
+                    }
+
+			Address:{
+                required:"please enter your address"
+            }
+           
+		}
+        });
+});
+
+</script>
+</head>
+<body>
+ <div class="container">
+        <h2>Registration</h2>
+  <form class="cmxform" id="signupForm" >
+     
+    <label for="firstname">First Name</label>
+    <input type="text" name="firstname" id="firstname" placeholder="Enter your name" required/><br/>
+
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" placeholder=Your email" required/><br/>
+
+    <label for="mobile">Mobile</label>
+    <input type="mobile" name="mobile" id="mobile" placeholder=Your mobile no." required/><br/>
+
+    <label for ="Address">Address</label>
+    <textarea id="field" onkeyup="countChar(this)"></textarea><br/><br/>
+    
+    <label for ="City" required>City</label>
+    <select class="names">
+        <option value="Delhi">Delhi</option>
+        <option value="Banglore">Banglore</option>
+        <option value="Ahmedabad">Ahmedabad</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="pune">Pune</option>
+    </select><br/><br/>  
+
+    <label for ="About Me" required>About Me</label>
+    <textarea name="content"></textarea>
+         <script src="ckeditor.js"></script>
+         <script>
+            CKEDITOR.replace( 'content' );
+        </script><br/><br/>
+     
+    Date:<input type = "text" id = "datepic" required/>
+    <script>
+        $("#datepic").datepicker({
+           
+        });
+    </script><br/><br/>
+
+   <label for ="Hobby" required>Hobby</label>
+   <select class="Hobby">
+            <option value="Music">Music</option>
+            <option value="Walking">Walking</option>
+            <option value="Reading Books">Reading Books</option>
+            <option value="Gardening">Gardening</option>
+            <option value="Traveling">Traveling</option>
+            <option value="Watching Sports">Watching Sports</option>
+   </select><br/><br/>  
+
+   <label for ="Introduction" required>Introduction</label>
+   <textarea name="content1"></textarea>
+        <script src="ckeditor.js"></script>
+        <script>
+            CKEDITOR.replace( 'content1' );
+        </script><br/><br/>
+
+  <button type="submit">Register</button><br/>
+
+  </form>
+</div>
+
+</body>
+</html>
