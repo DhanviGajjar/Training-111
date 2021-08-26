@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery hide() show() function</title>
+  <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+        $(".btn-hide").click(function(){
+                                 $("p").hide();
+                                       });
+
+        $(".btn-show").click(function(){
+                                 $("p").show();
+                                        });
+    });
+  </script>
+  <style type="text/css">
+    p {
+      background-color: #99FFFF;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body> 
+  <button type="button" class="btn-hide">Hide</button> 
+  <button type="button" class="btn-show">Show</button>
+  <p>This paragraph will be hide/show animated.</p> 
+</body> 
+</html>

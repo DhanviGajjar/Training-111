@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <title>jQuery.dequeue demo</title>
+  <style>
+  div {
+    margin: 3px;
+    width: 50px;
+    position: absolute;
+    height: 50px;
+    left: 10px;
+    top: 30px;
+    background-color: yellow;
+  }
+  div.red {
+    background-color: red;
+  }
+  </style>
+  <script src="jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function(){
+              $( "button" ).click(function() {
+                              $( "div" )
+                                  .animate({ left: '+=200px' }, 2000 )
+                                  .animate({ top: '0px' }, 600 )
+                                  .queue(function() {
+                                   $( this ).toggleClass( "red" );
+                                   $.dequeue( this );
+                                                   })
+                             .animate({ left:'10px', top:'30px' }, 700 );
+                                             });
+    });
+  </script>
+</head>
+<body>
+ 
+<button>Start</button>
+<div></div>
+</body>
+</html>
