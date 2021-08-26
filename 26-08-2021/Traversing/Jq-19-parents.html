@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.ancestors * { 
+  display: block;
+  border: 2px solid lightgrey;
+  color: lightgrey;
+  padding: 5px;
+  margin: 15px;
+}
+</style>
+<script src="jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("span").parents().css({"color": "red", "border": "2px solid red"});
+});
+</script>
+</head>
+
+<body class="ancestors">body 
+  <div style="width:500px;">div 
+    <ul>ul 
+      <li>li (direct parent)
+        <span>span</span>
+      </li>
+    </ul>   
+  </div>
+</body>
+</html>

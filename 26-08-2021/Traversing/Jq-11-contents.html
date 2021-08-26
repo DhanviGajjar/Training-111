@@ -1,0 +1,21 @@
+<!doctype html>
+<html >
+<head>
+  
+  <title>contents demo</title>
+  <script src="jquery-3.6.0.min.js"></script>
+  <script>
+  $(document).ready(function(){
+$( "p" )
+  .contents()
+  .filter(function(){
+    return this.nodeType !== 1;
+  })
+  .wrap( "<b></b>" );
+  });
+</script>
+</head>
+<body>
+<p>Hello <a href="https://www.narendramodi.in/downloadapp">Narendra Modi</a>, how are you doing?</p>
+ </body>
+</html>
