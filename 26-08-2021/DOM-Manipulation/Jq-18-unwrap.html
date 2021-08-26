@@ -1,0 +1,33 @@
+<!doctype html>
+<html >
+<head>
+  <title>unwrap demo</title>
+  <style>
+  div {
+    border: 2px solid blue;
+  }
+  p {
+    background: yellow;
+    margin: 4px;
+  }
+  </style>
+  <script src="jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <button>wrap/unwrap</button>
+<p>Hello</p>
+<p>cruel</p>
+<p>World</p>
+<script>
+var pTags = $( "p" );
+$( "button" ).click(function() {
+  if ( pTags.parent().is( "div" ) ) {
+    pTags.unwrap();
+  } else {
+    pTags.wrap( "<div></div>" );
+  }
+});
+</script>
+ 
+</body>
+</html>

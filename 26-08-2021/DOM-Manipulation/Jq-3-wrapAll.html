@@ -1,0 +1,27 @@
+<!doctype html>
+<html >
+<head>
+  <title>wrapAll demo</title>
+  <style>
+  div {
+    border: 2px solid blue;
+  }
+  p {
+    background: yellow;
+    margin: 4px;
+  }
+  </style>
+  <script src="jquery-3.6.0.min.js"></script>
+</head>
+<body>
+ 
+<p>Hello</p>
+<p>cruel</p>
+<p>World</p>
+ 
+<script>
+$( "p" ).wrapAll( "<div></div>" );
+</script>
+ 
+</body>
+</html>
