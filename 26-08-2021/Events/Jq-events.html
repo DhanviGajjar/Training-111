@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+      var x = 0;
+      $(document).ready(function () {
+        $(window).resize(function () {
+          $("h4").text((x += 1));
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!--resize-->
+
+    <h2>resize()</h2>
+    <p>Window resized times</p>
+    <h4>0</h4>
+
+    <!--scroll-->
+    <h2>scroll()</h2>
+    <p>Try the scrollbar in the div</p>
+
+    <div
+      id="text1"
+      style="
+        border: 1px solid black;
+        width: 200px;
+        height: 100px;
+        overflow: scroll;
+      "
+    >
+      In my younger and more vulnerable years my father gave me some advice that
+      I've been turning over in my mind ever since. <br /><br />
+      'Whenever you feel like criticizing anyone,' he told me, just remember
+      that all the people in this world haven't had the advantages that you've
+      had.'
+    </div>
+
+    <p>Scrolled <span>0</span> times.</p>
+    <script>
+      var a = 0;
+      $(document).ready(function () {
+        $("#text1").scroll(function () {
+          $("span").text((a += 1));
+        });
+      });
+    </script>
+
+    <!--bind()-->
+    <h2>bind()</h2>
+    <p>Click me!</p>
+    <script>
+      $(document).ready(function () {
+        $("p").bind("click", function () {
+          alert("The paragraph was clicked.");
+        });
+      });
+    </script>
+
+    <!--delegate()-->
+    <h2>delegate()</h2>
+    <div style="background-color: yellow">
+      <p id="txt">This is a paragraph inside a div element.</p>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $("div").delegate("p", "click", function () {
+          $("#txt").css("background-color", "pink");
+        });
+      });
+    </script>
+
+    <!--off()-->
+    <h2>off()</h2>
+    <p id="text11">Click this paragraph to change its background color.</p>
+    <p id="text11">
+      Click the button below and then click on this paragraph (the click event
+      is removed).
+    </p>
+    <button>Remove the click event handler</button>
+    <script>
+      $(document).ready(function () {
+        $("#text11").on("click", function () {
+          $(this).css("background-color", "pink");
+        });
+        $("button").click(function () {
+          $("#text11").off("click");
+        });
+      });
+    </script>
+
+    <!--on()-->
+
+    <h2>on()</h2>
+    <p id="tx">Click this paragraph.</p>
+    <script>
+      $("#tx").on("click", function () {
+        alert("The paragraph was clicked......");
+      });
+    </script>
+
+    <!--one()-->
+
+    <h2>one()</h2>
+
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    <p>
+      Click any p element to increase its text size. The event will only trigger
+      once for each p element.
+    </p>
+    <script>
+      $("p").one("click", function () {
+        $(this).animate({ fontSize: "+=6px" });
+      });
+    </script>
+
+    <!--trigger()-->
+
+    <h2>trigger()</h2>
+
+    <input type="text" value="Hello World" /><br /><br />
+    <button>Trigger the select event for the input field</button>
+
+    <script>
+      $(document).ready(function () {
+        $("input").select(function () {
+          $("input").after(" Text marked!");
+        });
+        $("button").click(function () {
+          $("input").trigger("select");
+        });
+      });
+    </script>
+
+    <!--triggerHandler()-->
+
+    <h2>triggerHandler()</h2>
+    <!--same ad trigger but the text is not marked when the button is clicked-->
+
+    <!--unbind()-->
+    <h2>unbind()</h2>
+    <p>This is a paragraph.</p>
+    <p>This is another paragraph.</p>
+    <p>Click any p element to make it disappear.</p>
+
+    <button>Remove all event handlers for all p elements</button>
+    <script>
+      $("p").click(function () {
+        $(this).slideToggle();
+      });
+      $("button").click(function () {
+        $("p").unbind();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      div {
+        color: red;
+      }
+      span {
+        display: none;
+      }
+    </style>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("input").blur(function () {
+          alert("This input field has lost its focus.");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h2>blur()</h2>
+    Enter your name: <input type="text" />
+    <p>
+      Write something in the input field, and then click outside the field to
+      lose focus (blur).
+    </p>
+
+    <!--change()-->
+    <h2>change()</h2>
+    <select name="sweets" multiple="multiple">
+      <option>Chocolate</option>
+      <option selected="selected">Candy</option>
+      <option>Taffy</option>
+      <option selected="selected">Caramel</option>
+      <option>Fudge</option>
+      <option>Cookie</option>
+    </select>
+    <div></div>
+
+    <script>
+      $("select")
+        .change(function () {
+          var str = "";
+          $("select option:selected").each(function () {
+            str += $(this).text() + " ";
+          });
+          $("div").text(str);
+        })
+        .change();
+    </script>
+
+    <!--focus()-->
+    <h2>focus()</h2>
+    <p><input type="text" /> <span>focus fire</span></p>
+
+    <script>
+      $("input").focus(function () {
+        $(this).next("span").css("display", "inline").fadeOut(1000);
+      });
+    </script>
+
+    <!--focusin-out-->
+    <h2>focusin() focusout()</h2>
+    <div style="border: 1px solid black; padding: 10px">
+      First name: <input type="text" /><br />
+      Last name: <input type="text" />
+    </div>
+
+    <p>
+      Click an input field to get focus. Click outside an input field to lose
+      focus.
+    </p>
+    <script>
+      $(document).ready(function () {
+        $("div").focusin(function () {
+          $(this).css("background-color", "yellow");
+        });
+        $("div").focusout(function () {
+          $(this).css("background-color", "#FFFFFF");
+        });
+      });
+    </script>
+
+    <!--select()-->
+    <!--select the events-->
+
+    <!--submit()-->
+    <h2>submit()</h2>
+    <form action="">
+      First name: <input type="text" name="FirstName" value="Mickey" /><br />
+      Last name: <input type="text" name="LastName" value="Mouse" /><br />
+      <input type="submit" value="Submit" />
+    </form>
+    <script>
+      $(document).ready(function () {
+        $("form").submit(function () {
+          alert("Submitted");
+        });
+      });
+    </script>
+
+    <!--keydown// keyup-->
+    <h2>keyup() keydown()</h2>
+    Enter your name: <input type="text" />
+
+    <p>
+      Enter your name in the input field above. It will change background color
+      on keydown and keyup.
+    </p>
+    <script>
+      $(document).ready(function () {
+        $("input").keydown(function () {
+          $("input").css("background-color", "yellow");
+        });
+        $("input").keyup(function () {
+          $("input").css("background-color", "pink");
+        });
+      });
+    </script>
+  </body>
+</html>

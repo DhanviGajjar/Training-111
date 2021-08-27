@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <h2>keyup() keydown() Keypresses()</h2>
+    Enter your name: <input type="text" />
+
+    <p>
+      Enter your name in the input field above. It will change background color
+      on keydown and keyup.
+    </p>
+    <p>Keypresses: <span>0</span></p>
+
+    <script>
+      $(document).ready(function () {
+        $("input").keydown(function () {
+          $("input").css("background-color", "yellow");
+        });
+        $("input").keyup(function () {
+          $("input").css("background-color", "pink");
+        });
+        i = 0;
+
+        $("input").keypress(function () {
+          $("span").text((i += 1));
+        });
+      });
+    </script>
+  </body>
+</html>
