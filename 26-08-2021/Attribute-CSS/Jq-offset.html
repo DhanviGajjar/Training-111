@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#btn1").click(function () {
+          var x = $("p").offset();
+          alert("Top: " + x.top + " Left: " + x.left);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h2>offset()</h2>
+    <p>This is a paragraph.</p>
+    <button id="btn1">Return the offset coordinates of the p element</button>
+    <!--offsetparent-->
+    <h2>offsetParent()</h2>
+    <ul class="level-1">
+      <li class="item-i">I</li>
+      <li class="item-ii" style="position: relative">
+        II
+        <ul class="level-2">
+          <li class="item-a">A</li>
+          <li class="item-b">
+            B
+            <ul class="level-3">
+              <li class="item-1">1</li>
+              <li class="item-2">2</li>
+              <li class="item-3">3</li>
+            </ul>
+          </li>
+          <li class="item-c">C</li>
+        </ul>
+      </li>
+      <li class="item-iii">III</li>
+    </ul>
+
+    <script>
+      $("li.item-a").offsetParent().css("background-color", "red");
+    </script>
+    <!--position-->
+    <h2>position()</h2>
+    <p>This is a paragraph.</p>
+    <button id="btn">Return the top and left position of the p element</button>
+    <script>
+      $(document).ready(function () {
+        $("#btn").click(function () {
+          var x = $("p").position();
+          alert("Top position: " + x.top + " Left position: " + x.left);
+        });
+      });
+    </script>
+    <!--scroll left-->
+    <h2>scrollleft()</h2>
+    <div
+      style="
+        border: 1px solid black;
+        width: 100px;
+        height: 130px;
+        overflow: auto;
+      "
+    >
+      The longest word in the english dictionary is:
+      pneumonoultramicroscopicsilicovolcanoconiosis.
+    </div>
+    <br />
+
+    <button id="btn2">Return the horizontal position of the scrollbar</button>
+    <p>Move the scrollbar to the right and click the button again.</p>
+
+    <script>
+      $(document).ready(function () {
+        $("#btn2").click(function () {
+          alert($("div").scrollLeft() + " px");
+        });
+      });
+    </script>
+    <!--scroll top-->
+    <h2>scrolltop()</h2>
+    <div style="border:1px solid black;width:100px;height:150px;overflow:auto">
+        This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text. This is some text.</div><br>
+        
+        <button id="btn3">Return the vertical position of the scrollbar</button>
+        <p>Move the scrollbar down and click the button again.</p>
+        
+        <script>
+            $(document).ready(function(){
+              $("#btn3").click(function(){
+                alert($("div").scrollTop() + " px");
+              });
+            });
+            </script>
+  </body>
+</html>

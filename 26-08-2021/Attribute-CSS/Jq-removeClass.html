@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("button").click(function () {
+          $("p").removeClass("intro");
+        });
+      });
+    </script>
+    <style>
+      .intro {
+        font-size: 120%;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>removeClass</h2>
+
+    <p class="intro">This is a paragraph.</p>
+    <p class="intro">This is another paragraph.</p>
+
+    <button>Remove the "intro" class from all p elements</button>
+  </body>
+</html>

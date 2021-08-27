@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      p {
+        margin: 20px 0 0;
+      }
+      b {
+        color: blue;
+      }
+      h4{
+    color: blue;
+    margin: 8px;
+  }
+    </style>
+    <script src="jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <h2>attr() prop() demo</h2>
+    <input id="check1" type="checkbox" checked="checked" />
+    <label for="check1">Check me</label>
+    <p></p>
+
+    <script>
+      $("input")
+        .change(function () {
+          var $input = $(this);
+          $("p").html(
+            ".attr( 'checked' ): <b>" +
+              $input.attr("checked") +
+              "</b><br>" +
+              ".prop( 'checked' ): <b>" +
+              $input.prop("checked") +
+              "</b><br>" +
+              "</b>"
+          );
+        })
+        .change();
+    </script>
+
+    <h2>removeAttr()</h2>
+    <button>Change title</button>
+    <input type="text" title="hello there" />
+    <div id="log"></div>
+    <script>
+      $(document).ready(function () {
+        var inputTitle = $("input").attr("title");
+        $("button").click(function () {
+          var input = $(this).next();
+
+          if (input.attr("title") === inputTitle) {
+            input.removeAttr("title");
+          } else {
+            input.attr("title", inputTitle);
+          }
+
+          $("#log").html("input title is now " + input.attr("title"));
+        });
+      });
+    </script>
+
+    <h2>removeProp()</h2>
+    <button id="btn">Property</button><br /><br />
+    <div></div>
+    <script>
+        $("#btn").click(function () {
+          var $val = $("div");
+          $val.prop("font-size", "1.6em");
+          $val.append("Property value = " + $val.prop("font-size"));
+          $val.removeProp("font-size");
+          $val.append("<br>Property removed successfully...");
+        });
+  </script>
+
+<h2>val()</h2>
+<input type="text" value="some text">
+<h4></h4>
+
+<script>
+    $( "input" )
+      .keyup(function() {
+        var value = $( this ).val();
+        $( "h4" ).text( value );
+      })
+      .keyup();
+    </script>
+  </body>
+</html>

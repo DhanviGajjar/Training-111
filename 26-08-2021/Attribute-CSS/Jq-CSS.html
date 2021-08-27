@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      p {
+        margin: 8px;
+        font-size: 16px;
+      }
+      .selected {
+        color: blue;
+      }
+      .highlight {
+        background: yellow;
+      }
+      div {
+        width: 60px;
+        height: 60px;
+        margin: 5px;
+        float: left;
+      }
+    
+    </style>
+    <script src="jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <!--addClass() -->
+    <h2>addClass()</h2>
+    <p>Hello</p>
+    <p>and</p>
+    <p>Goodbye</p>
+    <script>
+      $("p").last().addClass("selected");
+    </script>
+
+    <!--css()-->
+    <h2>css()</h2>
+    <span id="result">&nbsp;</span>
+    <div style="background-color: blue"></div>
+    <div style="background-color: rgb(22, 153, 46)"></div>
+    <div style="background-color: #c7e424"></div>
+    <div style="background-color: #f11"></div>
+
+    <script>
+      $("div").click(function () {
+        var color = $(this).css("background-color");
+        $("#result").html(
+          "That div is <span style='color:" + color + ";'>" + color + "</span>."
+        );
+      });
+    </script>
+
+   
+    
+  </body>
+</html>

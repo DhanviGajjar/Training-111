@@ -1,0 +1,87 @@
+<html>
+<head>
+<script src="jquery-3.6.0.min.js"> </script>
+<style>
+div {
+padding: 10px;
+background-color: lightcoral;
+font-size: 25px;
+width: 350px;
+}
+</style>
+</head>
+
+<body>
+<h2>data()</h2>
+<div> This is a div element. </div>
+<p> Click the following buttons to see the effect. </p>
+<button id = "b1"> Attach data </button>
+<button id = "b2"> Get data </button>
+<script>
+$("document").ready(function(){
+$("#b1").click(function(){
+$("div").data("name", "Welcome to the javaTpoint.com");
+alert("Data attached");
+})
+$("#b2").click(function(){
+alert($("div").data("name"));
+$("div").text($("div").data("name"));
+})
+});
+</script>
+
+<!--hasdata-->
+
+<h2>hasData()</h2>
+<p>Results: </p>
+ 
+<script>
+var $p = jQuery( "p" ), p = $p[ 0 ];
+$p.append( jQuery.hasData( p ) + " " ); // false
+ 
+$.data( p, "testing", 123 );
+$p.append( jQuery.hasData( p ) + " " ); // true
+ 
+$.removeData( p, "testing" );
+$p.append( jQuery.hasData( p ) + " " ); // false
+ 
+$p.on( "click", function() {} );
+$p.append( jQuery.hasData( p ) + " " ); // true
+ 
+$p.off( "click" );
+$p.append( jQuery.hasData( p ) + " " ); // false
+</script>
+
+<!--removedata-->
+
+<h2>removedata()</h2>
+<p id = "p1">  </p>
+<p> Click the below buttons to see the effect. </p>
+<button id = "btn1"> Add data </button>
+<button id = "btn2"> Remove data using the optional parameter </button>
+<button id = "btn3"> Remove data without using the optional parameter </button>
+<p id = "p2"> </p>
+
+<script>  
+    $(document).ready(function(){  
+    $("#btn1").click(function(){  
+    $("#p1").data("name", "James");   
+    $("#p1").data("id", "E-102");   
+    $("#p1").data("designation", "Engineer");   
+    $("#p2").html("Data added successfully. </br> The data after applying the <b> data() </b> method: </br> <b> Name: </b> " + $("#p1").data("name") + " </br> <b> Id: </b> " + $("#p1").data("id") + " </br> <b> Designation: </b> " + $("#p1").data("designation"));   
+        });  
+      $("#btn2").click(function(){  
+     $("#p1").removeData("name");   
+    $("#p2").html("Data removed successfully. </br> The data values after applying the <b> removeData('name') </b> method: </br> <b> Name: </b> " + $("#p1").data("name") + " </br> <b> Id: </b> " + $("#p1").data("id") + " </br> <b> Designation: </b> " + $("#p1").data("designation"));    
+    });  
+    $("#btn3").click(function(){  
+     $("#p1").removeData();   
+    $("#p2").html("Data removed successfully. </br> The data values after applying the <b> removeData() </b> method: </br> <b> Name: </b> " + $("#p1").data("name") + " </br> <b> Id: </b> " + $("#p1").data("id") + " </br> <b> Designation: </b> " + $("#p1").data("designation"));     
+    });  
+    });  
+    </script>  
+</body>
+
+</html>
+
+ 
