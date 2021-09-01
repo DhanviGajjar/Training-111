@@ -1,0 +1,21 @@
+<html>
+<head>
+<script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function(){
+$("#LoadData").click(function(e){
+    $.ajax({
+     url: "t2.html",
+     success: function (result,status,xhr) {
+     $("#myData").html(result);
+}
+});
+})
+    });
+</script>
+</head>
+<body>
+<button id="LoadData">Load Data</button>
+<div id="myData"></div>
+</body>
+</html>
