@@ -1,0 +1,19 @@
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+    </tr>
+{{#each mydata}}
+<tr>
+    <td>{{user_name}}</td>
+    <td>{{user_email}}</td>
+    <td>
+        <a href="/users/edit-form/{{_id}}">Edit</a>
+         <a href="/users/delete/{{_id}}">Delete</a>
+    </td>
+</tr>
+{{/each}}
+
+
+</table>
