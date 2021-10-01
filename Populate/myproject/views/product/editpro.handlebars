@@ -1,0 +1,25 @@
+<html>
+<body>
+
+    <form method="post">
+        <h1>Add Product Record</h1>
+        <table>
+            <tr>
+                <td>Product Name</td>
+                <td> <input type="text" placeholder="Enter Product" name="product_name" value="{{product_array.product_name}}"></td>
+            </tr>
+            <tr>
+                <td>Subcategory</td>
+                            <td> <input type="text"  name="sub_category_name" 
+                value="{{product_array._subcategory}}" required> </td>
+        </tr>
+            </tr>
+           
+            <tr>
+                <td><input type="submit"></td>
+                <td><input type="reset"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

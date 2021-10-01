@@ -1,0 +1,31 @@
+<html>
+<body>
+
+    <form method="post">
+        <h1>Add Product Record</h1>
+        <table>
+            <tr>
+                <td>Product Name</td>
+                <td> <input type="text" placeholder="Enter Product" name="product_name"></td>
+            </tr>
+            <tr>
+                <td>Subcategory</td>
+                <td> 
+                    <select name="_subcategory">
+                   {{#each mydata}}
+                        
+                            <option value='{{_id}}'>{{sub_category_name}}</option>
+                           
+                           {{/each}}
+                        </select>
+                </td>
+            </tr>
+           
+            <tr>
+                <td><input type="submit"></td>
+                <td><input type="reset"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
