@@ -1,0 +1,21 @@
+<h1>Display</h1>
+{{mydata.length}} Records Found
+
+<table border='1'>
+    <tr>
+        <th>Category Name</th>
+        <th>Action</th>
+    </tr>
+
+{{#each mydata}}
+    <tr>
+        <td>{{c_name}}</td>
+        <td>
+        <a href="/category-edit/{{_id}}">Edit</a> |
+        <a href="/category-delete/{{_id}}">Delete</a>
+        </td>
+    </tr>
+{{/each}}
+
+
+</table>

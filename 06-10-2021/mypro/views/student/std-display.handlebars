@@ -1,0 +1,33 @@
+<h1>Student-Display</h1>
+{{mydata.length}} Records Found
+
+<table border='1'>
+    <tr>
+        <th>Name</th>
+        <th>Mobile</th>
+        <th>Email Id</th>
+        <th>Gender</th>
+        <th>Date of Birth(DOB)</th>
+        <th>Hobbies</th>
+        <th>Action</th>
+    </tr>
+
+{{#each mydata}}
+    <tr>
+    <td>{{stud_name}}</td>
+    <td>{{stud_mobile}}</td>
+    <td>{{stud_email}}</td>
+    <td>{{stud_gender}}</td>
+    <td>{{stud_dob}}</td>
+    <td>{{stud_hobbies}}</td>
+
+    <td>
+        <a href="/std-edit/{{_id}}">Edit</a> |
+        <a href="/deletestd/{{_id}}">Delete</a>
+
+    </td>
+    </tr>
+{{/each}}
+</table>
+    
+    

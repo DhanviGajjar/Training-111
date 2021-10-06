@@ -1,0 +1,29 @@
+<h1>Add-to-cart-Display</h1>
+
+{{mydata.length}} Records Found
+
+<table border='1'>
+    <tr>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>Product Qty</th>
+         <th>Action</th>
+    </tr>
+
+{{#each mydata}}
+    <tr>
+    
+    <td>{{_product.pro_name}}</td>
+    <td>{{_product.pro_price}}</td>
+    <td>{{pro_qty}}</td>
+    
+    <td>
+        <a href="/cart-edit/{{_id}}">Edit</a> |
+        <a href="/cart-delete/{{_id}}">Delete</a> |
+      
+    </td>
+    </tr>
+{{/each}}
+
+
+</table>

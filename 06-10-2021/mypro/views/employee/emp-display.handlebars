@@ -1,0 +1,28 @@
+<h1> Employee-Display</h1>
+{{mydata.length}} Records Found
+
+<table border='1'>
+    <tr>
+        <th>Name</th>
+        <th>Mobile</th>
+        <th>Age</th>
+        <th>Salary</th>
+        <th>Action</th>
+    </tr>
+
+{{#each mydata}}
+    <tr>
+    <td>{{emp_name}}</td>
+    <td>{{emp_mobile}}</td>
+    <td>{{emp_age}}</td>
+    <td>{{emp_salary}}</td>
+    <td>
+        <a href="/emp-edit/{{_id}}">Edit</a> |
+        <a href="/emp-delete/{{_id}}">Delete</a>
+
+    </td>
+    </tr>
+{{/each}}
+
+
+</table>

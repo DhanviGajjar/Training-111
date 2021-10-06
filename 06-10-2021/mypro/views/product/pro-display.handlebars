@@ -1,0 +1,34 @@
+<a href="/display-cart">Cart Display</a>
+
+
+<h1>Display</h1>
+{{mydata.length}} Records Found
+
+<table border='1'>
+    <tr>
+            <th>Product Name</th>
+            <th>Product Details</th>
+            <th>Product Price</th>
+            <th>Product Qty</th>
+            <th>Action</th>
+    </tr>
+
+{{#each mydata}}
+    <tr>
+    
+    <td>{{pro_name}}</td>
+    <td>{{pro_details}}</td>
+    <td>{{pro_price}}</td>
+    <td>{{pro_qty}}</td>
+    
+    <td>
+        <a href="/pro-edit/{{_id}}">Edit</a> |
+        <a href="/pro-delete/{{_id}}">Delete</a> |
+        <a href="/pro-addtocart/{{_id}}">Add To Cart</a>
+
+    </td>
+    </tr>
+{{/each}}
+
+
+</table>
