@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 //Call User Database Model
-var StateModel = require('../schema/state_table');
+var StateModel = require('../schema/state');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

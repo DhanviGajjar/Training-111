@@ -1,0 +1,62 @@
+<html>
+<body>
+<form method="post"  enctype="multipart/form-data">
+   Name     : <input type="text" name="name" ><br><br>
+    <span style="color: red;">{{nameError.msg}}</span><br>
+
+<br>
+   Email    : <input type="text" name="email" > <br><br>
+      <span style="color: red;">{{emailError.msg}}</span><br>
+
+
+<br>
+   Mobile   : <input type="number" name="mobile" > <br><br>
+     <span style="color: red;">{{contactError.msg}}</span><br>
+
+<br>
+   Password : <input type="password" name="password" > <br><br>
+    <span style="color: red;">{{passwordError.msg}}</span><br>
+
+
+<br>
+
+<br>
+   PAN Card NO: <input type="pancard" name="pancard" > <br><br>
+    <span style="color: red;">{{pancardError.msg}}</span><br>
+
+
+<br>
+
+<br>
+  AadharCard NO: <input type="aadharcard" name="aadharcard" > <br><br>
+    <span style="color: red;">{{aadharcardError.msg}}</span><br>
+
+
+<br>
+
+<br>
+   PassPort NO: <input type="passport" name="passport" > <br><br>
+    <span style="color: red;">{{passportError.msg}}</span><br>
+
+
+<br>
+
+
+<br>
+   GST NO : <input type="gst" name="gst" > <br><br>
+    <span style="color: red;">{{gstError.msg}}</span><br>
+
+
+<br>
+<input type="submit">
+</form>
+{{!-- {{#if myerrors}}
+<ul>
+    {{#each myerrors}}
+    <li style="color: red">{{this.msg}}</li>
+    {{/each}}
+</ul>
+{{!-- {{/if}} --}}
+
+</body>
+</html>

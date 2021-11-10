@@ -1,0 +1,107 @@
+
+ 
+    <style>
+        body {
+            font-family: Calibri, Helvetica, sans-serif;
+            background-color: pink;
+        }
+
+        .container {
+            padding: 50px;
+            background-color: lightblue;
+        }
+
+        input[type=text],
+        input[type=password],
+        textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        input[type=text]:focus,
+        input[type=password]:focus {
+            background-color: orange;
+            outline: none;
+        }
+
+        div {
+            padding: 10px 0;
+        }
+
+        hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
+        }
+
+        .registerbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+        }
+
+        .registerbtn:hover {
+            opacity: 1;
+        }
+    </style>
+    {{!-- <link href="https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet"> --}}
+
+
+    {{!-- <script src="./formcustom/jquery.min.js"></script> --}}
+
+    {{!-- <script src="/public/formcustom/jquery-ui.js"></script> --}}
+    
+    <script src="./jquery.validate.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/additional-methods.js"></script>
+
+  <script src="/javascripts/formcustom.js"></script>
+
+
+    <form method="post" id="customValid">
+        <div class="container">
+            <center>
+                <h1> Student Registeration Form</h1>
+            </center>
+            <label> Firstname </label>
+            <input type="text" name="firstname" placeholder="Firstname" size="15"  /><br /><br />
+            <label> Middlename: </label>
+            <input type="text" name="middlename" placeholder="Middlename" size="15"  /><br /><br />
+            <label> Lastname: </label>
+            <input type="text" name="lastname" placeholder="Lastname" size="15"  /><br /><br />
+
+            <div>
+                <label>
+                    Gender :
+                </label><br>
+                <input type="radio" value="Male" name="gender" checked> Male
+                <input type="radio" value="Female" name="gender"> Female
+                <input type="radio" value="Other" name="gender"> Other
+
+            </div><br /><br />
+            <label>
+                Phone :
+            </label>
+            <input type="text" name="phone" placeholder="Country Code"  />
+        <br />
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" ><br /><br />
+
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" ><br /><br />
+
+
+            <button type="submit" id="validateButton" name="validateButton" class="registerbtn">Register</button>
+            
+            
+            
+            
+    </form>

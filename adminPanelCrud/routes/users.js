@@ -5,6 +5,7 @@ var router = express.Router();
 
 // Model Loading
 var UserModel = require('../models/user_model');
+
 var StudentModel = require('../models/student_model');
 var EmployeeModel = require('../models/employee_model');
 
@@ -67,6 +68,7 @@ router.get('/delete/:id', function(req, res, next) {
 });
 
 router.get('/edit/:id', function(req, res, next) {
+  
     var editid = req.params.id;
     UserModel.findById(editid, function(err, data) {
         if (err) {
@@ -188,7 +190,7 @@ router.get('/addemployee', function(req, res, next) {
     res.render('employees/add');
 });
 
-router.post('/add-process-employee', function(req, res, next) {
+router.post('/addemployee', function(req, res, next) {
     var fileobject = req.files.photo;
     var filename = req.files.photo.name;
     const mybodydata = {
@@ -263,7 +265,7 @@ router.post('/editemployee/:id', function(req, res, next) {
             fileobject.mv("public/upload/" + filename, function(err) {
                 if (err) throw err;
                 // res.send("File Uploaded");
-                res.redirect('/users/displayemployee');
+                res.redirect('/admin/users/displayemployee');
             });
         }
     }).lean();
@@ -276,7 +278,7 @@ router.get('/deleteemployee/:id', function(req, res, next) {
             console.log("Error in Delete" + err);
         } else {
             console.log("Record Deleted" + deleteid);
-            res.redirect('/users/displayemployee');
+            res.redirect('employees/display');
         }
     })
     res.render('employees/display');

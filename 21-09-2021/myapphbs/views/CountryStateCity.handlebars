@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    {{!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#formSubmitBtn").click(function () {
+                $.ajax({
+                    url: '/CountryStateCity',
+                    type: 'post',
+                    dataType: 'html',
+                    data: $('#form').serialize(),
+                    success: function (data) {
+                        $('.errors').html(data)
+                        /*if(data) {
+                           for(let err of data) {
+                              $('.errors').append('<li style="color: red">'+err.msg+'</li>')
+                           }
+                        }*/
+                    },
+                    error: function () {
+
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <form method="post" enctype="multipart/form-data" id="form">
+        <div class="container" style="width:600px;">
+            <h2 align="center">JSON - Dynamic Dependent Dropdown List using Jquery and Ajax</h2><br /><br />
+            {{!-- <form method="post" enctype="multipart/form-data" id="ajaxform">
+                --}}
+
+
+                <select class="form-select" name="country" id="country" class="form-control input-lg">
+                    <option value="">Select country</option>
+                    <option value="india">India</option>
+                    <option value="us">US</option>
+                </select>
+                <br />
+
+                <select  class="form-select" name="state" id="state" class="form-control input-lg">
+                    <option value="">Select state</option>
+                    <option value="gujarat">gujarat</option>
+                    <option value="Rajathan">Rajathan</option>
+                </select>
+                <br />
+
+                <select  class="form-select" name="city" id="city" class="form-control input-lg">
+                    <option value="">Select city</option>
+                     <option value="Ahmedabad">Ahmedabad</option>
+                    <option value="Surat">Surat</option>
+                    <option value="Jaypur">Jaypur</option>
+                    <option value="Abu">Abu</option>
+                </select>
+            </form>
+
+
+            <ul class="errors">
+
+            </ul>
+
+        </div>
+</body>
+
+</html>

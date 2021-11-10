@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 //Call User Database Model
-var SubCategoryModel = require('../schema/sub_category_table');
-var CategoryModel = require('../schema/category_table');
+var SubCategoryModel = require('../schema/subcategory');
+var CategoryModel = require('../schema/category');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

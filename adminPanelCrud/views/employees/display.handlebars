@@ -35,7 +35,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {{mydata}}
+                                {{!-- {{mydata}} --}}
                                   {{#each mydata}}
                                 <tr>
                                     <td>{{employee_name}}</td>
@@ -44,8 +44,14 @@
                                     {{!-- <td>{{employee_birthdate}}</td> --}}
                                     <td>{{employee_joindate}}</td>
                                     <td><img src="/upload/{{employee_photo}}" style="width: 100px;" /></td>
-                                    <td><a href="/users/editemployee/{{_id}}">Edit</a> | <a href="/users/deleteemployee/{{_id}}">Delete</a></td>
-                                </tr>
+
+
+                                    <td><a href="/admin/users/editemployee/{{_id}}">Edit</a> |
+                                     <a href="/admin/users/deleteemployee/{{_id}}" Onclick="ConfirmDelete()">Delete</a>
+                                     </td>
+                               
+                               
+                               
                                 {{/each}}
                             </tbody>
                             <tfoot>

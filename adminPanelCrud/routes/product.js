@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 
 //Call User Database Model
-var ProductModel = require('../schema/product_table');
-var SubCategoryModel = require('../schema/sub_category_table');
-var CartModel = require('../schema/cart_table');
+var ProductModel = require('../schema/product');
+var SubCategoryModel = require('../schema/subcategory');
+var CartModel = require('../schema/cart');
 
 
 /* GET home page. */

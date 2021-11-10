@@ -1,0 +1,36 @@
+   
+<h1>Display</h1>
+
+{{mydata.length}} Records Found
+
+<table border='1'>
+    <tr>
+      
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Address</th>
+            <th>Photo</th>
+            <th>userArea</th>
+            <th>Action</th>
+    </tr>
+
+{{#each mydata}}
+    <tr>
+    <td>{{user_name}}</td>
+    <td>{{user_gender}}</td>
+    <td>{{user_email}}</td>
+    <td>{{user_password}}</td>
+    <td>{{user_address}}</td>
+    <td>{{user_photo}}</td>
+    <td>{{_area.area_name}}</td>
+    <td>
+        <a href="user-edit/{{_id}}">Edit</a> |
+        <a href="user-delete/{{_id}}" >Delete</a>
+
+    </td>
+    </tr>
+{{/each}}
+
+</table>

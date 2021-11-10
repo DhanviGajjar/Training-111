@@ -1,0 +1,66 @@
+
+<html>
+<head>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script>
+$(document).ready(function () {
+         $("#formSubmitBtn").click(function () {
+        $("#category").on("change", function () {
+            $("#subcategory").empty();
+            showValue($(this).val());
+        });
+        var data = {};
+
+        function showValue(val) {
+            console.log(val);
+            data.category = val;
+            $.ajax({
+                url: "/ajaxForm",
+                type: "POST",
+                data: data,
+                success: function (result) {
+
+                    updateDOM(result);
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        };
+
+        var updateDOM = function (result) {
+
+            var data = result.data;
+
+            for (var i = 0; i < data.length; i++) {
+                console.log(data[i]);
+                $("#subcategory").append("<option>" + data[i] + "</option>");
+            };
+
+        };
+           });
+      });
+
+    </script>
+</head>
+
+<body>
+    <form method="post" enctype="multipart/form-data" id="form">
+        <div class="form-control">
+            <label for="category">Category</label>
+            <select name="category" id="category">
+                <option value='Men'>Men</option>
+                <option value='Women'>Women</option>
+                <option value='Sports'>Sports</option>
+            </select>
+
+            <label for="subcategory">Sub Category</label>
+            <select id="subcategory" name="subcategory">
+            </select>
+
+        </div>
+        <input type="button" id="formSubmitBtn"/>
+    </form>
+</body>
+
+</html>

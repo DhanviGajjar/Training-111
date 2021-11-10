@@ -1,0 +1,38 @@
+<style>
+    table {
+    counter-reset: tableCount;     
+}
+.counterCell:before {              
+    content: counter(tableCount); 
+    counter-increment: tableCount; 
+}
+
+</style>
+
+<h1>Display State</h1>
+{{mystate.length}} Records Found
+
+<table border='1'>
+    <tr>
+        <th>ID</th>
+            <th>State Name</th>
+            
+            <th>Action</th>
+    </tr>
+
+{{#each mystate}}
+    <tr>
+    <td class="counterCell"></td>
+    <td>{{state_name}}</td>
+
+    
+    <td>
+        <a href="editstate/{{_id}}">Edit</a> |
+        <a href="deletestate/{{_id}}" onclick="return confirm('Are you sure?')">Delete</a>
+
+    </td>
+    </tr>
+{{/each}}
+
+
+</table>

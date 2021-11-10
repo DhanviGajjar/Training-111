@@ -1,8 +1,71 @@
 <html>
+
+<head>
+   {{!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
+   <script type="text/javascript" src="jquery.min.js"></script>
+   <script>
+      $(document).ready(function () {
+         $("#formSubmitBtn").click(function () {
+            $.ajax({
+               url: '/form', 
+               type: 'post', 
+               dataType: 'html',
+               data:$('#form').serialize(),
+               success: function (data) {
+                  $('.errors').html(data)
+                  /*if(data) {
+                     for(let err of data) {
+                        $('.errors').append('<li style="color: red">'+err.msg+'</li>')
+                     }
+                  }*/
+               },
+               error:function () {
+                  
+               }
+            });
+         });
+      });
+   </script>
+</head>
+
 <body>
-<form method="post" action="/formprocess" enctype="multipart/form-data">
-File :<input type="file" name="file123">
-<input type="submit">
-</form>
+   <form method="post" enctype="multipart/form-data" id="form" >
+      Name :
+      <input type="text"  name="name" id="name" class="item"/><br /><br />
+      <span style="color: red;">{{nameError.msg}}</span><br />
+
+      <br />
+      Email :
+      <input type="text"  name="email" class="item"/>
+      <br /><br />
+      <span style="color: red;">{{emailError.msg}}</span><br />
+
+      <br />
+      Mobile :
+      <input type="number"  name="mobile" class="item"/>
+      <br /><br />
+      <span style="color: red;">{{contactError.msg}}</span><br />
+
+      <br />
+      Password :
+      <input type="password"  id= "pwd" name="password" class="item"/>
+      <br /><br />
+      <span style="color: red;">{{passwordError.msg}}</span><br />
+
+      <br />
+      <input type="button" id="formSubmitBtn"/>
+   </form>
+   <ul class="errors">
+
+   </ul>
+   {{!-- {{#if myerrors}}
+   <ul>
+      {{#each myerrors}}
+      <li style="color: red">{{this.msg}}</li>
+      {{/each}}
+   </ul>
+   {{!-- {{/if}} --}}
+
 </body>
+
 </html>

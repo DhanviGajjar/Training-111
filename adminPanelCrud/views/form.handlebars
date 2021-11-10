@@ -1,0 +1,47 @@
+
+   {{!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> --}}
+   {{!-- <script type="text/javascript" src="jquery.min.js"></script> --}}
+  
+  
+  <script src="/javascripts/formerr.js"></script>
+   
+   <form method="post" enctype="multipart/form-data" id="form" >
+      Name :
+      <input type="text"  name="name" id="name" class="item"/><br /><br />
+      <span style="color: red;">{{nameError.msg}}</span><br />
+
+      <br />
+      Email :
+      <input type="text"  name="email" class="item"/>
+      <br /><br />
+      <span style="color: red;">{{emailError.msg}}</span><br />
+
+      <br />
+      Mobile :
+      <input type="number"  name="mobile" class="item"/>
+      <br /><br />
+      <span style="color: red;">{{contactError.msg}}</span><br />
+
+      <br />
+      Password :
+      <input type="password"  id= "pwd" name="password" class="item"/>
+      <br /><br />
+      <span style="color: red;">{{passwordError.msg}}</span><br />
+
+      <br />
+      <input type="button" id="formSubmitBtn"/>
+   </form>
+   <ul class="errors">
+
+   </ul>
+   {{!-- {{#if myerrors}}
+   <ul>
+      {{#each myerrors}}
+      <li style="color: red">{{this.msg}}</li>
+      {{/each}}
+   </ul>
+   {{!-- {{/if}} --}}
+{{!-- 
+{{#each myerrors}}
+    <li style="color: red">{{msg}}</li>
+{{/each}} --}}

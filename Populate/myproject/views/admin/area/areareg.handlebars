@@ -1,0 +1,31 @@
+<html>
+<body>
+    <form method="post">
+        <h1>Add Area Record</h1>
+        <table>
+            <tr>
+                <td>Area Name</td>
+                <td> <input type="text" placeholder="Enter area" name="area_name"></td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td> 
+                    <select name="_city">
+                   {{#each mydata}}
+                        
+                            <option value='{{_id}}'>{{city_name}}</option>
+                           
+                           {{/each}}
+                        </select>
+                </td>
+            </tr>
+           
+       
+            <tr>
+                <td><input type="submit"></td>
+                <td><input type="reset"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

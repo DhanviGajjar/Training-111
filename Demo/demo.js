@@ -14,14 +14,24 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', (socket) => {
+  console.log('a user connected');
+});
+
+
+
+io.on('connection', (socket) => {
   socket.on('chat message', (msg) => {
+    
     connect.then(db  =>  {
       console.log("connected correctly to the server");
       console.log(msg);
+      io.emit('chat message', msg);
       let  chatMessage  =  new chatData({ message: msg});
     chatMessage.save();
     });
   });
+
+  
   //   const inputData = {
   //     message : msg
   //   }

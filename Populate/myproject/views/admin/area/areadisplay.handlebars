@@ -1,0 +1,33 @@
+<style>
+    table {
+    counter-reset: tableCount;     
+}
+.counterCell:before {              
+    content: counter(tableCount); 
+    counter-increment: tableCount; 
+}
+
+</style>
+<h1>Display</h1>
+{{area_array.length}} Records Found
+<table border='1'>
+    <tr>
+        <th>ID</th>
+            <th>Area Name</th>
+            <th>City Name</th>
+          
+        <th>Action</th>
+    </tr>
+{{#each area_array}}
+    <tr>
+    <td class="counterCell"></td>
+    <td>{{area_name}}</td>
+    <td>{{_city.city_name}}</td>
+    <td>
+        <a href="areaedit/{{_id}}">Edit</a> |
+        <a href="deletearea/{{_id}}" onclick="return confirm('Are you sure?')">Delete</a>
+    </td>
+    </tr>
+{{/each}}
+</table>
+

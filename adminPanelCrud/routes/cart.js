@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 //Call User Database Model
-var CartModel = require('../schema/cart_table');
+var CartModel = require('../schema/cart');
 var UserMOdel = require('../user');
 
 /* GET home page. */
