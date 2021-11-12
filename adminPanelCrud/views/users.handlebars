@@ -31,11 +31,12 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
     <script src="/javascripts/users.js"></script>
+     <script src="/javascripts/jquery-validate.js"></script>
 </head>
 
 <body>
     
-    <form method="POST" id="quickForm">
+    <form method="POST" id="quickForm" action="" enctype="multipart/form-data">
         <div class="card card-success">
             <div class="card-header">
                 <h3 class="card-title">User Form</h3>
@@ -50,7 +51,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="far fa-square"></i></span>
                         </div>
-                        <input type="text" name="firstname" class="form-control" placeholder="Enter FirstName" />
+                        <input type="text" id="firstname" name="firstname" class="form-control" placeholder="Enter FirstName" />
                     </div>
                 </div>
 
@@ -61,7 +62,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="far fa-square"></i></span>
                         </div>
-                        <input type="text" name="lastname" class="form-control" placeholder="Enter LastName" />
+                        <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Enter LastName" />
                     </div>
                 </div>
 
@@ -72,7 +73,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="far fa-square"></i></span>
                         </div>
-                        <textarea name="address" class="form-control" placeholder="enter your address" rows="4"
+                        <textarea name="address" id="address" class="form-control" placeholder="enter your address" rows="4"
                             cols="50"></textarea>
                     </div>
                 </div>
@@ -83,9 +84,9 @@
                     <label>Gender</label>
                     <div class="input-group">
                         <div class="custom-control custom-radio">
-                            <input type="radio" name="gender" value="male"> Male<br>
-                            <input type="radio" name="gender" value="female"> Female<br>
-                            <input type="radio" name="gender" value="other"> Other
+                            <input type="radio" id="gender" name="gender" value="male"> Male<br>
+                            <input type="radio" id="gender" name="gender" value="female"> Female<br>
+                            <input type="radio" id="gender" name="gender" value="other"> Other
                         </div>
                     </div>
                 </div>
@@ -96,13 +97,13 @@
                     <label>Hobby</label>
                     <div class="input-group">
                         <div class="custom-control custom-checkbox">
-                            <input type="checkbox" name="hobby" value="sports" id="sport">
+                            <input type="checkbox" id="hobby" name="hobby" value="sports" id="sport">
                             <label for="sport">Sports</label>
 
-                            <input type="checkbox" name="hobby" value="music" id="music">
+                            <input type="checkbox" id="hobby"  name="hobby" value="music" id="music">
                             <label for="music">Music</label>
 
-                            <input type="checkbox" name="hobby" value="reading" id="read">
+                            <input type="checkbox" id="hobby"  name="hobby" value="reading" id="read">
                             <label for="read">Reading</label>
                         </div>
                     </div>
@@ -131,15 +132,48 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fas fa-square"></i></span>
                         </div>
-                        <input type="file" name="photo" class="form-control" />
+                        <input type="file" id="photo" name="photo" class="form-control" />
                     </div>
                 </div>
 
                 <input class="btn btn-success" id="validate" type="submit" value="Submit" />
+              
+                <a href="/userdelete/{{_id}}"  id="editform"  class="delbutton btn btn-success">Delete</a>
+                <input class="btn btn-success" id="update" type="button" value="update"/>
+         
             </div>
 
         </div>
         
+        </form>
+         <table id="example1" class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Address</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{!-- {{mydata}} --}}
+            {{#each mydata}}
+            <tr>
+
+                <td><img src="/upload/{{photo}}" style="width: 100px;" /></td>
+                <td>{{firstname}}</td>
+                <td>{{lastname}}</td>
+                <td>{{ address}}</td>
+                <td><a href="/useredit/{{_id}}" class="edit">Edit</a> |
+                    <a  id="viewedit" href="/userdelete/{{_id}}" class="delbutton">Delete</a>
+                </td>
+            {{/each}}
+        </tbody>
+        
+       
+    </table>
+    
 </body>
 
 </html>

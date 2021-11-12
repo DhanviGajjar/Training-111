@@ -127,9 +127,6 @@ router.get('/edit/:id', function(req, res) {
 router.post('/edit/:id', function(req, res) {
   console.log("Edit ID is"+ req.params.id);
   const imgObject = req.files
-
- 
-  
   const id = req.params.id
   if(!req.files){
     return ProductModel.findById(id).select("product_Image").then((product)=>{

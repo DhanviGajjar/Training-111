@@ -1,14 +1,15 @@
+const { response } = require('express');
 var express = require('express');
 var router = express.Router();
 
 const { check, validationResult } = require("express-validator");
 
-var FormModel=require('../schema/form');
-var UsercustomModel=require('../schema/usercustom');
+var FormModel = require('../schema/form');
+var UsercustomModel = require('../schema/usercustom');
 var UsersModel = require('../schema/users');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
   console.log("Index Called " + req.session);
   var myemail = req.session.email;
   var myid = req.session._id;
@@ -21,7 +22,7 @@ router.get('/', function(req, res, next) {
     res.end("Login required to Access this page");
   }
   // res.render('admin-home', { myemail: myemail });
-  res.render('index', { myemail : myemail, myid:myid });
+  res.render('index', { myemail: myemail, myid: myid });
 });
 
 
@@ -78,7 +79,7 @@ router.post(
     //     // res.redirect('/formcheck')
     //     res.render('form',{myerrors: errors });
     if (errors) {
-        res.render('err',{myerrors: errors ,layout:false});
+      res.render('err', { myerrors: errors, layout: false });
       // return res.send(errors);
     }
 
@@ -367,7 +368,7 @@ router.post(
 // router.post('/ajaxForm',(req,res,next) => {
 //   let data = [];
 //   let category = req.body.category;
- 
+
 
 //   console.log('From the ajax call, category is' + category);
 //   if(category = "Men") {
@@ -403,39 +404,39 @@ router.post(
 //Display country route.
 router.get('/displaycountry', async function (req, res, next) {
   try {
-      //Find country data from countryModel.
-      let countryData = await countryModel.find().lean()
-      res.render('Country/displaycountry', { countryData: countryData })
+    //Find country data from countryModel.
+    let countryData = await countryModel.find().lean()
+    res.render('Country/displaycountry', { countryData: countryData })
   } catch (error) {
-      console.log("Error in fetch country data.", error)
+    console.log("Error in fetch country data.", error)
   }
 });
 
 //Display state route.
 router.post('/displaystate', async function (req, res, next) {
   try {
-      //Find state data from database.
-      let dbStateData = await stateModel.find().populate('_country').lean()
-      /**create an array for display only  required data
-       * beacause in dbStateData contains all the data of state table
-       * but we want to print only selected country data
-      **/
-      let stateData = []
-      //Store required state data in stateData from dbStateData.
-      for (const iterator of dbStateData) {
-          /** Check country id with state data
-           * of country id if both are same then we push
-           * into the sateData and send to the client.
-           */
-          if (iterator._country._id == req.body._id) {
-              stateData.push(iterator)
-          }
-
+    //Find state data from database.
+    let dbStateData = await stateModel.find().populate('_country').lean()
+    /**create an array for display only  required data
+     * beacause in dbStateData contains all the data of state table
+     * but we want to print only selected country data
+    **/
+    let stateData = []
+    //Store required state data in stateData from dbStateData.
+    for (const iterator of dbStateData) {
+      /** Check country id with state data
+       * of country id if both are same then we push
+       * into the sateData and send to the client.
+       */
+      if (iterator._country._id == req.body._id) {
+        stateData.push(iterator)
       }
-      res.render('state/displaystate', { stateData: stateData })
+
+    }
+    res.render('state/displaystate', { stateData: stateData })
   } catch (error) {
-      //Display errors.
-      console.log("Error in fetch state data.", error)
+    //Display errors.
+    console.log("Error in fetch state data.", error)
   }
 });
 
@@ -444,27 +445,27 @@ router.post('/displaystate', async function (req, res, next) {
 //Route for display city data.
 router.post('/displaycity', async function (req, res, next) {
   try {
-      //Find the all city data from database.
-      let dbCityData = await cityModel.find().populate('_state').lean()
-      /**create an array for display only  required data
-       * beacause in dbCityData contains all the data of city table
-       * but we want to print only selected country data
-      **/
-      let cityData = []
-      /** Check state id with city data
-       * of state id if both are same then we push
-       * into the cityData and send to the client.
-       */
-      for (const iterator of dbCityData) {
-          if (iterator._state._id == req.body._id) {
-              cityData.push(iterator)
-          }
-
+    //Find the all city data from database.
+    let dbCityData = await cityModel.find().populate('_state').lean()
+    /**create an array for display only  required data
+     * beacause in dbCityData contains all the data of city table
+     * but we want to print only selected country data
+    **/
+    let cityData = []
+    /** Check state id with city data
+     * of state id if both are same then we push
+     * into the cityData and send to the client.
+     */
+    for (const iterator of dbCityData) {
+      if (iterator._state._id == req.body._id) {
+        cityData.push(iterator)
       }
-      res.render('city/displaycity', { cityData: cityData })
-      //Display errors.
+
+    }
+    res.render('city/displaycity', { cityData: cityData })
+    //Display errors.
   } catch (error) {
-      console.log("Error in fetch city data.", error)
+    console.log("Error in fetch city data.", error)
   }
 });
 // //country form
@@ -472,10 +473,10 @@ router.post('/displaycity', async function (req, res, next) {
 //   res.render('country/countryreg', { title: 'Express' });
 // });
 // router.post('/c-process', function(req, res, next) {
-  
+
 //   const mybodydata = {
 //     c_name : req.body.cname,
-    
+
 //   }
 //   var data = CountryModel(mybodydata);
 
@@ -487,7 +488,7 @@ router.post('/displaycity', async function (req, res, next) {
 //       res.send("Record Successfully Added")
 //     }
 //   })
-  
+
 // });
 
 
@@ -507,7 +508,7 @@ router.post('/displaycity', async function (req, res, next) {
 //           console.log(db_country_array);
 //           //Render User Array in HTML Table
 //           res.render('state/statereg', { mydata : db_country_array });
-          
+
 //         }
 //     });
 // //res.render('add-category');
@@ -515,19 +516,19 @@ router.post('/displaycity', async function (req, res, next) {
 
 // router.post('/statereg', function(req, res, next) {
 //   console.log(req.body);
- 
+
 //   //Create an Array 
 //   const mybodydata = {
 //     state_name: req.body.state_name,
 //     _country: req.body._country
-   
+
 //     }
- 
+
 //     console.log("Name is "  + req.body.state_name);
 //     console.log("ID is "  + req.body._country);
- 
+
 // var data = StateModel(mybodydata);
- 
+
 // data.save(function(err) {
 //     if (err) {
 //        console.log("Error in Insert Record");
@@ -542,22 +543,22 @@ router.post('/displaycity', async function (req, res, next) {
 // router.get('/displaystate', function(req, res, next) {
 
 //   StateModel.find(function(err, db_state_array){
-      
+
 //       console.log(db_state_array);
 
 //       if (err) res.json({message: 'There are no posts here.'});
 
 //       StateModel.find({})
 //       .populate('_country')
-    
+
 //         .exec(function(err, db_state_array) {
 
 //           console.log(db_state_array);
-       
+
 //           res.render("state/displaystate", { state_array: db_state_array });
 //         })
 //     });
- 
+
 // });
 
 
@@ -580,7 +581,7 @@ router.post('/displaycity', async function (req, res, next) {
 // router.get('/editstate/:id', function(req, res) {
 
 //   console.log(req.params.id);
-  
+
 //   StateModel.findById(req.params.id, function(err, db_state_array) {
 //       if (err) {
 //           console.log("Edit Fetch Error " + err);
@@ -605,7 +606,7 @@ router.post('/displaycity', async function (req, res, next) {
 //           console.log("Error in Record Update");
 //           res.redirect('/state/displaystate');
 //       } else {
-        
+
 //           res.redirect('/displaystate');
 //       }
 //   });
@@ -626,7 +627,7 @@ router.post('/displaycity', async function (req, res, next) {
 //         } else {
 //           //Print Data in Console
 //           console.log(db_state_array);
-          
+
 //           CountryModel.find(function(err, db_country_array) {
 //             if (err) {
 //                 console.log("Error in Fetch Data " + err);
@@ -635,8 +636,8 @@ router.post('/displaycity', async function (req, res, next) {
 //                 console.log(db_country_array);
 //                 //Render User Array in HTML Table
 //                 return res.render('city/cityreg', { mydata : db_state_array, mycountry : db_country_array });
-                
-              
+
+
 //               }
 //           });
 //         }
@@ -657,7 +658,7 @@ router.post('/displaycity', async function (req, res, next) {
 //     console.log("ID is "  + req.body._country)
 
 // var data = CityModel(mybodydata);
- 
+
 // data.save(function(err) {
 //     if (err) {
 //        console.log("Error in Insert Record");
@@ -672,22 +673,22 @@ router.post('/displaycity', async function (req, res, next) {
 // router.get('/displaycity', function(req, res, next) {
 
 //   CityModel.find(function(err, db_city_array){
-      
+
 //       console.log(db_city_array);
 
 //       if (err) res.json({message: 'There are no posts here.'});
 
 //       CityModel.find({})
 //       .populate('_state')
-      
+
 //         .exec(function(err, db_city_array) {
 
 //           console.log(db_city_array);
-       
+
 //           res.render("city/displaycity", { city_array: db_city_array });
 //         })
 //     });
- 
+
 // });
 
 // //city delete
@@ -711,7 +712,7 @@ router.post('/displaycity', async function (req, res, next) {
 // router.get('/editcity/:id', function(req, res) {
 
 //   console.log(req.params.id);
-  
+
 //   CityModel.findById(req.params.id, function(err, db_city_array) {
 //       if (err) {
 //           console.log("Edit Fetch Error " + err);
@@ -737,7 +738,7 @@ router.post('/displaycity', async function (req, res, next) {
 //           console.log("Error in Record Update");
 //           res.redirect('/city/displaycity');
 //       } else {
-        
+
 //           res.redirect('/displaycity');
 //       }
 //   });
@@ -750,27 +751,27 @@ router.get("/formvalidation", function (req, res, next) {
   res.render("formvalidation");
 });
 
-router.post("/formvalidation",async function (req, res, next) {
- try{
- 
-  console.log("email is",req.body.email)
-  let email = await FormModel.findOne({'email':req.body.email})
-  if(email){
-    console.log("email:",email)
-    res.send(false);
-  }
-  res.send(true);
+router.post("/formvalidation", async function (req, res, next) {
+  try {
 
- }catch(error){
-console.log("Error in email:",error);
- }
+    console.log("email is", req.body.email)
+    let email = await FormModel.findOne({ 'email': req.body.email })
+    if (email) {
+      console.log("email:", email)
+      res.send(false);
+    }
+    res.send(true);
+
+  } catch (error) {
+    console.log("Error in email:", error);
+  }
 
 });
 
 
 // router.post("/formvalidation/:field",async function (req, res, next) {
 //   try{
-  
+
 //    console.log("email is",req.body.email)
 //   //  console.log("mobile is",req.body.mobile)
 //    let email = await UserModel.findOne({'email':req.body.email})
@@ -779,11 +780,11 @@ console.log("Error in email:",error);
 //      res.send(false);
 //    }
 //    res.send(true);
- 
+
 //   }catch(error){
 //  console.log("Error in email:",error);
 //   }
- 
+
 //  });
 
 router.get("/formcustom", function (req, res, next) {
@@ -792,80 +793,179 @@ router.get("/formcustom", function (req, res, next) {
 
 
 
-router.post("/formcustom",async function (req, res, next) {
- try{
- 
-  console.log("firstname is",req.body.firstname)
-  let firstname = await UsercustomModel.findOne({'firstname':req.body.firstname})
-  if(firstname){
-    console.log("firstname:",firstname)
-    res.send(true);
-  }
-  res.send(false);
+router.post("/formcustom", async function (req, res, next) {
+  try {
 
- }catch(error){
-console.log("Error in email:",error);
- }
+    console.log("firstname is", req.body.firstname)
+    let firstname = await UsercustomModel.findOne({ 'firstname': req.body.firstname })
+    if (firstname) {
+      console.log("firstname:", firstname)
+      res.send(true);
+    }
+    res.send(false);
+
+  } catch (error) {
+    console.log("Error in email:", error);
+  }
 
 });
-
-
-
 router.get("/form11", function (req, res, next) {
   res.render("form11");
 });
 
 
+
+
 router.get("/users", function (req, res, next) {
-  res.render("users");
-});
-
-router.post("/users", function (req, res, next) {
-
-  console.log(req.body);
-
-  //Create an Array 
-  const mybodydata = {
-    name: req.body.name,
-    email: req.body.email,
-    password: req.body.password,
-    firstname:req.body.firstname,
-    lastname:req.body.lastname,
-    address:req.body.address,
-    gender:req.body.gender,
-    hobby:req.body.hobby,
-    interestArea:req.body.interestArea,
-    chooseFile:req.body.chooseFile,
-
-  }
-  //bind the i/p data with admin model
-  var data = UsersModel(mybodydata);
-  //save data into database
-  data.save(function (err) {
-    //if error occur
+  UsersModel.find(function (err, data) {
     if (err) {
-      console.log("Error in Insert Record" + err);
-      //redirect to login page
-    } else {
-      console.log("Record Added");
-      res.redirect("/users");
+      console.log("Edit Fetch Error " + err);
     }
-  })
-
-});
-
-      
-router.get('/userdisplay', function(req, res, next) {
-  UsersModel.find(function(err, data) {
-      if (err) {
-          console.log("Error in Fetch Data" + err);
-      } else {
-          console.log("Record Data is" + data);
-          res.render('usersdisplay', { mydata: data });
-      }
+    else {
+      res.render("users", { mydata: data });
+      // res.render('useredit', { mydata: data });
+    }
   }).lean();
 });
- 
+
+router.post("/users", async function (req, res, next) {
+  console.log(req.body);
+  var fileobject = req.files.photo;
+  var filename = req.files.photo.name;
+  //Create an Array 
+  const mybodydata = {
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
+    address: req.body.address,
+    gender: req.body.gender,
+    hobby: req.body.hobby,
+    interestArea: req.body.interestArea,
+    photo: filename,
+  }
+  try {
+    var users = await UsersModel(mybodydata).save();
+    // res.render("users");
+    console.log(users);
+    // fileobject.mv("public/productUploads/" + filename, function(err) {
+    //   if (err) throw err;
+    //   // res.send("File Uploaded");
+    // // res.redirect('users');
+    // });
+
+    // res.send( { "data": mybodydata });
+    fileobject.mv("public/productUploads/" + filename, function (err) {
+      if (err) throw err;
+
+      res.send({ "data": mybodydata });
+    });
+  }
+  catch (error) {
+    next(error);
+  }
+
+});
+
+//Get Single User for Edit Record
+router.get('/useredit/:id',async function (req, res) {
+  var editid = req.params.id;
+  console.log("edit id is : ", req.params.id);
+  //find data from category models
+try{
+    var users = await UsersModel.findById(editid).lean()
+  // UsersModel.findById(editid, function (err, data) {
+    //if err
+    res.send({
+      type: 'success',
+      message: 'Record Deleted',
+     "users":users,
+    })
+    console.log(users);
+    // res.send({ mydata: users });
+    } catch (err) {
+      console.log("display Fetch Error " + err);
+    }
+});
+
+// router.put('/useredit/:id', async function (req, res) {
+//   var editid = req.params.id;
+//   var fileobject = req.files.photo;
+//   var filename = req.files.photo.name;
+//   console.log("Edit ID is" + req.params.id);
+//   const mybodydata = {
+//     firstname: req.body.firstname,
+//     lastname: req.body.lastname,
+//     address: req.body.address,
+//     gender: req.body.gender,
+//     hobby: req.body.hobby,
+//     interestArea: req.body.interestArea,
+//     photo: filename,
+//   }
+
+//   try {
+//     var users = await UsersModel.findByIdAndUpdate(editid, mybodydata, function (err, data) {
+//       fileobject.mv("public/productUploads/" + filename, function (err) {
+//         if (err) {
+//           console.log("Error in Record Update" + err);
+//         } else {
+//           console.log(data);
+//           res.redirect('/users');
+//         }
+//       });
+//     }).lean();
+//   }
+//   catch (error) {
+//     console.log(error)
+//     res.send({
+//       type: 'error',
+//       message:'error while edit record'
+//     })
+  
+//   }
+// });
+
+router.put('/useredit/:id',  async function(req, res) {
+  try {
+      let { firstname, lastname, address, gender, interestarea } = req.body;
+
+      var userdata = { firstname, lastname, hobby: req.body['hobby'], address, gender, interestarea }
+      if (req.file) {
+          userdata.image = req.file.filename
+      }
+      let user = await UsersModel.findByIdAndUpdate(req.params.id, userdata, { new: true })
+
+
+      console.log(user);
+      res.json(user);
+  } catch (err) {
+      res.json({ message: "Something Went Wrong" });
+      console.log(err);
+  }
+})
+
+
+
+
+//Delete User By ID
+router.delete('/userdelete/:id', async function (req, res) {
+  var deleteid = req.params.id;
+  //find data from category model
+  try {
+    let result = await UsersModel.deleteOne({ _id: deleteid })
+    console.log("result");
+    console.log(result);
+    res.send({
+      type: 'success',
+      message: 'Record Deleted'
+    })
+  } catch (error) {
+    console.log(error)
+    res.send({
+      type: 'error',
+      message: 'Error while delete record'
+    })
+  }
+
+});
 
 
 module.exports = router;

@@ -37,38 +37,17 @@
             {{#each mydata}}
             <tr>
 
-                <td>{{chooseFile}}</td>
-                  <td><img src="/upload/{{chooseFile}}" style="width: 100px;" /></td>
+                <td><img src="/upload/{{photo}}" style="width: 100px;" /></td>
                 <td>{{firstname}}</td>
                 <td>{{lastname}}</td>
                 <td>{{ address}}</td>
-                {{!-- <td>{{employee_name}}</td>
-                <td>{{employee_hobby}}</td>
-                {{!-- <td>{{employee_mobile}}</td> --}}
-                {{!-- <td>{{employee_birthdate}}</td> --}}
-                <td>{{employee_joindate}}</td>
-                <td><img src="/upload/{{employee_photo}}" style="width: 100px;" /></td>
- --}}
-
-                <td><a href="/admin/users/editemployee/{{_id}}">Edit</a> |
-                    <a href="/admin/users/deleteemployee/{{_id}}" Onclick="ConfirmDelete()">Delete</a>
+                <td><a href="/useredit/{{_id}}">Edit</a> |
+                    <a href="/userdelete/{{_id}}" Onclick="ConfirmDelete()">Delete</a>
                 </td>
-
-
-
-                {{/each}}
+            {{/each}}
         </tbody>
-        {{!-- <tfoot>
-            <tr>
-                <th>Name</th>
-                <th>Hobby</th>
-                {{!-- <th>Mobile</th>
-                <th>Birthdate</th> --}}
-                <th>Join Date</th>
-                <th>Photo</th>
-                <th>Action</th>
-            </tr>
-        </tfoot> --}}
+        
+       
     </table>
 
 
@@ -102,6 +81,13 @@
                 "responsive": true,
             });
         });
+          function ConfirmDelete() {
+            var x = confirm("Are you sure you want to delete?");
+            if (x)
+                return true;
+            else
+                return false;
+        }
     </script>
 </body>
 

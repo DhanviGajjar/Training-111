@@ -1,0 +1,327 @@
+ $.ajax({
+              type: "POST",
+              url: "http://127.0.0.1:3000/userFormProcess",
+              data: formData,
+              dataType: "json",
+            }).done(function(data){
+              console.log("data is : ", data);
+            })
+
+
+
+
+    var formData{
+            firstname : $("#firstname").val(),
+            lastname : $("#lastname").val(),
+            address :$("#address").val(),
+            gender :$("#gender").val(),
+            hobby :$("#hobby").val(),
+            interest area :$("#interest area").val(),
+            photo:$("#photo").val(),
+
+    }
+
+
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+  <meta charset="UTF-8">
+  <script language="JavaScript">
+    function showInput() {
+        document.getElementById('display').innerHTML = 
+                    document.getElementById("user_input").value;
+    }
+  </script>
+
+  </head>
+<body>
+
+  <form>
+    <label><b>Enter a Message</b></label>
+    <input type="text" name="message" id="user_input">
+  </form>
+
+  <input type="submit" onclick="showInput();"><br/>
+  <label>Your input: </label>
+  <p><span id='display'></span></p>
+</body>
+</html>
+
+
+
+
+
+ <td>${(data.data.photo)}</td>
+ <td>${data.data.lastname}</td>
+                                       <td>${data.data.address}</td>
+<form name="photo" id="imageUploadForm" enctype="multipart/form-data" action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
+    <input type="file" style="widows:0; height:0" id="ImageBrowse" hidden="hidden" name="image" size="30"/>
+    <input type="submit" name="upload" value="Upload" />
+    <img width="100" style="border:#000; z-index:1;position: relative; border-width:2px; float:left" height="100px" src="<?php echo $upload_path.$large_image_name.$_SESSION['user_file_ext'];?>" id="thumbnail"/>
+</form>
+$(document).ready(function (e) {
+    $('#imageUploadForm').on('submit',(function(e) {
+        e.preventDefault();
+        var formData = new FormData(this);
+        $.ajax({
+            type:'POST',
+            url: $(this).attr('action'),
+            data:formData,
+            cache:false,
+            contentType: false,
+            processData: false,
+            success:function(data){
+                console.log("success");
+                console.log(data);
+            },
+            error: function(data){
+                console.log("error");
+                console.log(data);
+            }
+        });
+    }));
+    $("#ImageBrowse").on("change", function() {
+        $("#imageUploadForm").submit();
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+<form class='form-horizontal' method="POST"  id='document_form' enctype="multipart/form-data">
+                                    <div class='optionBox1'>
+                                        <div class='row inviteInputWrap1 block1'>
+                                            <div class='col-3'>
+                                                <label class='col-form-label'>Name</label>
+                                                <input type='text' class='form-control form-control-sm' name='name[]' id='name' Value=''>
+                                            </div>
+                                            <div class='col-3'>
+                                                <label class='col-form-label'>File</label>
+                                                <input type='file' class='form-control form-control-sm' name='file[]' id='file' Value=''>
+                                            </div>
+                                            <div class='col-3'>
+                                                <span class='deleteInviteWrap1 remove1 d-none'>
+                                                    <i class='fas fa-trash'></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class='row'>
+                                             <div class='col-8 pl-3 pb-4 mt-4'>
+                                                <span class='btn btn-info add1 pr-3'>+ Add More</span>
+                                                 <button class='btn btn-primary'>Submit</button> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </form>     
+                                    
+                                    </div>  
+                      
+    
+      $.validator.setDefaults({
+       submitHandler: function (form) 
+         {
+               $.ajax({
+                    url : "action1.php",
+                    type : "POST",
+                    data : new FormData(form),
+                    mimeType: "multipart/form-data",
+                    contentType: false,
+                    cache: false,
+                    dataType:'json',
+                    processData: false,
+                    success: function(data)
+                    {
+                        if(data.status =='success')
+                            {
+                                 swal("Document has been successfully uploaded!", {
+                                    icon: "success",
+                                 });
+                                 setTimeout(function(){
+                                    window.location.reload(); 
+                                },1200);
+                            }
+                            else
+                            {
+                                swal('Oh noes!', "Error in document upload. Please contact to administrator", "error");
+                            }   
+                    },
+                    error:function(data)
+                    {
+                        swal ( "Ops!" ,  "error in document upload." ,  "error" );
+                    }
+                });
+            }
+      });
+    
+<td>
+     <a href="/useredit/{{${obj.data.button}}}">Edit</a> | <a href="/userdelete/{{${obj.data.button}}}" Onclick="ConfirmDelete()">Delete</a>
+</td>
+
+ <td><a href="/useredit/{{_id}}">Edit</a> |
+                                        <a href="/userdelete/{{_id}}" Onclick="ConfirmDelete()">Delete</a>
+                                        </td>
+
+   $(document).on('click','.delbutton',function(){
+        var element = $(this);
+        var del_id = element.attr("id");
+        var info = 'id=' + del_id;
+        if(confirm("Are you sure you want to delete this Record?")){
+            $.ajax({
+                type: "GET",
+                url: "/users",
+                data: info,
+                success: function(){
+                    
+                  } 
+            });
+        }
+        return false;
+        });
+    
+
+
+
+
+
+
+
+// $.ajax({
+//     type:"POST",
+//     url:"useredit",
+//     data: {user: selected},
+//     dataType: "json",
+//     success: function(response){
+//        if(response.status == "success") {
+//             $("#firstname").val(response.firstname);
+//             $("#lastname").val(response.lastname);
+//             $("#address").val(response.address);
+//             $("#gender").val(response.gender);
+//             $("#hobby".val(response.hobby);
+//             $("#interestArea").val(response.interestArea);
+//             $("#photo").val(response.photo);
+//        } else {
+//           alert("No data found for this user!");
+//     }
+//  });
+// });
+
+
+
+// $('.edit').on('click', function() {
+//     let user_id = $(this).data("id");
+//     $(".edit").attr("disabled",true);
+//       $.ajax({
+//         url: "/useredit/"+user_id,
+//         method: "GET",
+//       }).done(function(data) {
+//         console.log("edit data is : ",data);
+//          $("#firstname").val(data.mydata.firstname);
+//          $("#lastname").val(data.mydata.lastname);
+//          $("#address").val(data.mydata.address);
+//          $('#'+data.mydata.gender).prop('checked',true);
+//          let hobbies = data.mydata.hobby.split(",");
+//         $("#hobbies")
+//         .find("[value=" + hobbies.join("], [value=") + "]")
+//         .prop("checked", true);
+//         $("#interestArea").val(data.mydata.interestArea);
+//         $('<img class="image" src="/upload/'+data.mydata.image+'" style="width: 100px;"/>').insertAfter('#image');
+//         $("#AddUser").val("Edit user");
+
+//       });
+
+
+//     });
+
+
+<a href="/useredit/618e13ffc7e09e2403a79f82" class="edit">Edit</a>
+
+
+
+
+
+
+
+
+$('.edit').on('click', function() {
+    let user_id = $(this).data("id");
+    var url = $(this).attr("href");
+    $(".edit").attr("disabled",true);
+      $.ajax({
+         url: "/useredit/"+ user_id,
+        // url:url,
+        method: "GET",
+      }).done(function(data) {
+        console.log("edit data is : ",data);
+         $("#firstname").val(data.mydata.firstname);
+         $("#lastname").val(data.mydata.lastname);
+         $("#address").val(data.mydata.address);
+         $('#'+data.mydata.gender).prop('checked',true);
+         let hobbies = data.mydata.hobby.split(",");
+        $("#hobbies")
+        .find("[value=" + hobbies.join("], [value=") + "]")
+        .prop("checked", true);
+        $("#interestArea").val(data.mydata.interestArea);
+        $('<img class="image" src="/upload/'+data.mydata.image+'" style="width: 100px;"/>').insertAfter('#image');
+        $("#AddUser").val("Edit user");
+      });
+    });
+$(".edit").attr("disabled",true);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ $(document).on("click", ".update", function () {
+            var valueHobbies = []
+            $(':checkbox:checked').each(function(i){valueHobbies.push($(this).val());});
+
+             const formdata = new FormData();
+                formdata.append('fName', $("#fName").val());
+                formdata.append('lName', $("#lName").val());
+                formdata.append('address', $("#address").val());
+                formdata.append('gender', $("#gender:checked").val());
+                formdata.append('interest',$('#interest').val());
+                formdata.append('hobbies', valueHobbies);
+                formdata.append('image',$('#image')[0].files[0]);
+                
+                let updateUser = $(this).data('id')
+                console.log(updateUser)
+                $('.edit-Btn').attr('disabled', false);
+             $.ajax({
+                    url:'/'+updateUser+'',
+                    method:'put',
+                    processData:false,
+                    contentType:false,
+                    data:formdata,
+                    success: function (value) {
+                    $('#'+updateUser).replaceWith("<tr> <td><img src='/images/"+value.image+"' height='50', width='50'/> </td> <td>"+value.fName+ value.lName+"</td>  <td>"+value.gender+"</td> <td>"+value.address+"</td> <td> <button class='btn btn-warning  edit-Btn' id="+value._id+"> Edit </button><button class='btn btn-info delete-Btn' id="+value._id+"> Delete </button></td> </tr>");
+                    $('#form')[0].reset();$('.img').remove();
+                   },
+                     error: function (error) { console.log(error); }   
+            })
+         });
+
+
+
+
+
+
+

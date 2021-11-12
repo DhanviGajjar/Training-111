@@ -9,13 +9,7 @@ var myschema = new Schema({
     gender:String,
     hobby:String,
     interestArea:String,
-    chooseFile:String,
-    // Phone:String,
-    // Email:String,
-    // Password:String,
-    
-
-   
+    photo:String,
 });
 
 module.exports = mongoose.model('users', myschema);
